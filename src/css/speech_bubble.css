@@ -27,6 +27,15 @@
             animation: typing-second 2s steps(35) 2.5s forwards;
         }
 
+@media (max-width: 768px) {
+    .speech-bubble {
+        top: 25%;
+        padding: 14px 18px;
+        font-size: 14px;
+        border-radius: 16px;
+    }
+}
+
 @keyframes bubbleFloat {
     0% {
         transform: translate(0, 0);
