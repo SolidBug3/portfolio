@@ -89,6 +89,14 @@ function App() {
                         Je peux traduire vos applications en <strong>anglais</strong> et <strong>japonais</strong>.
                     </div>
                 </section>
+
+                <section id="contact">
+                    <div className="contact">
+                        <center>J'attends vos plus belles idées de projets ici :<br /><br />
+                        <i>milosd21000@gmail.com</i><br /><br />
+                        <strong>Devis gratuis</strong>, parlons en ensemble !</center>
+                    </div>
+                </section>
             </main>
         </>
     )
