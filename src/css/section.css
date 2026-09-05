@@ -6,3 +6,9 @@ section {
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: 768px) {
+    section {
+        font-size: clamp(14px, 3.5vw, 18px);
+    }
+}
