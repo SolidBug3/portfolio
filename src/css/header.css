@@ -27,6 +27,14 @@ header {
     align-items: center;
     gap: 6px;
     animation: logoAppear 0.5s ease-out 0.8s both;
+    transition: opacity 0.3s ease;
+}
+
+body:has(#about:target) .logo,
+body:has(#projects:target) .logo,
+body:has(#contact:target) .logo {
+    opacity: 0;
+    pointer-events: none;
 }
 
 nav {
@@ -47,6 +55,7 @@ nav {
         text-transform: uppercase;
         position: relative;
     }
+
         nav a::after {
             content: "";
             position: absolute;
@@ -99,7 +108,6 @@ nav {
         cursor: pointer;
     }
 }
-
 
 @keyframes slideDown {
     from {

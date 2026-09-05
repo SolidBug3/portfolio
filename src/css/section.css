@@ -10,5 +10,6 @@ section {
 @media (max-width: 768px) {
     section {
         font-size: clamp(14px, 3.5vw, 18px);
+        padding: 0 clamp(16px, 6vw, 40px);
     }
 }
