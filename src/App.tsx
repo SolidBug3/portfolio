@@ -85,7 +85,7 @@ function App() {
                         eh bien c’est ici que vous les trouverez au rendez-vous,<br />
                         comme vous et moi, si je puis avoir l’honneur de travailler sur votre projet.<br /><br />
                         Au plaisir de vous voir pour de nouvelles aventures codesques et graphiques !<br /><br />
-                        PS : Comme vous l’aurez compris de par ma plume, les langues et l’écriture sont d’autres cordes à mon arc.<br />
+                        <strong>PS</strong> : Comme vous l’aurez compris de par ma plume, les langues et l’écriture sont d’autres cordes à mon arc.<br />
                         Je peux traduire vos applications en <strong>anglais</strong> et <strong>japonais</strong>.
                     </div>
                 </section>
