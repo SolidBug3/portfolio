@@ -29,7 +29,7 @@
 
 @media (max-width: 768px) {
     .speech-bubble {
-        top: 15vh;
+        top: clamp(10%, 18%, 25%);
         left: 5%;
         padding: clamp(10px, 3vw, 14px) clamp(12px, 4vw, 18px);
         font-size: clamp(12px, 3.5vw, 14px);
