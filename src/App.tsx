@@ -28,7 +28,7 @@ function App() {
                         <span>On développe aussi vos applications..</span>
                     </div>
 
-                    <img src="/me.png" alt="" />
+                    <img src={`${import.meta.env.BASE_URL}me.png`} alt="" />
                 </div>
             </main>
         </>
