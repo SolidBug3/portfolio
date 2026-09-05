@@ -11,12 +11,17 @@ function App() {
 
     useEffect(() => {
         const sections = document.querySelectorAll('section')
+        const logo = document.querySelector('.logo')
 
         const observer = new IntersectionObserver(
             entries => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting && window.innerWidth <= 768) {
-                        document.querySelector('.logo')?.classList.toggle('logo-hidden', entry.target.id !== 'homepage')
+                    if (entry.isIntersecting) {
+                        if (window.innerWidth <= 768) {
+                            logo?.classList.toggle('logo-hidden', entry.target.id !== 'homepage')
+                        } else {
+                            logo?.classList.remove('logo-hidden')
+                        }
                     }
                 })
             },
