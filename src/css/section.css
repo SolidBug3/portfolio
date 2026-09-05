@@ -1,0 +1,8 @@
+section {
+    color: var(--quaternary);
+    font-size: clamp(18px, 4vw, 22px);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
