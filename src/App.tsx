@@ -15,7 +15,7 @@ function App() {
         const observer = new IntersectionObserver(
             entries => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
+                    if (entry.isIntersecting && window.innerWidth <= 768) {
                         document.querySelector('.logo')?.classList.toggle('logo-hidden', entry.target.id !== 'homepage')
                     }
                 })
