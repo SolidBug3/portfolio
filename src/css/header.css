@@ -30,12 +30,10 @@ header {
     transition: opacity 0.3s ease;
 }
 
-body:has(#about:target) .logo,
-body:has(#projects:target) .logo,
-body:has(#contact:target) .logo {
-    opacity: 0;
-    pointer-events: none;
-}
+    .logo.logo-hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
 
 nav {
     position: absolute;

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import './css/index.css'
 import './css/header.css';
@@ -8,6 +8,25 @@ import './css/section.css';
 
 function App() {
     const [menuOpen, setMenuOpen] = useState(false)
+
+    useEffect(() => {
+        const sections = document.querySelectorAll('section')
+
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        document.querySelector('.logo')?.classList.toggle('logo-hidden', entry.target.id !== 'homepage')
+                    }
+                })
+            },
+            { threshold: 0.5 }
+        )
+
+        sections.forEach(section => observer.observe(section))
+
+        return () => observer.disconnect()
+    }, [])
 
     return (
         <>
