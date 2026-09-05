@@ -74,12 +74,25 @@ nav {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) and (max-width: 1650px) {
+    nav {
+        left: auto;
+        right: clamp(80px, calc(80px + (1650px - 100vw) * 0.15), 210px);
+        transform: translateY(-50%);
+    }
+
+        nav a {
+            font-size: clamp(12px, calc(18px - (1650px - 100vw) * 0.0065), 18px);
+        }
+}
+
+@media (max-width: 1200px) {
     nav {
         display: none;
         position: absolute;
         top: 80px;
         left: 0;
+        right: auto;
         transform: none;
         width: 100%;
         flex-direction: column;

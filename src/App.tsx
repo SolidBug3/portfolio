@@ -17,7 +17,7 @@ function App() {
             entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        if (window.innerWidth <= 768) {
+                        if (window.innerWidth <= 1650) {
                             logo?.classList.toggle('logo-hidden', entry.target.id !== 'homepage')
                         } else {
                             logo?.classList.remove('logo-hidden')

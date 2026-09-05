@@ -26,9 +26,17 @@ body,
 }
 
 body {
-    background: linear-gradient( 120deg, #6367FF, #6367FF, #8F72FF, #6367FF );
+    background: linear-gradient(120deg, #6367FF, #6367FF, #8F72FF, #6367FF);
     background-size: 300% 300%;
     animation: gradientMove 8s ease infinite;
+}
+
+section {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    padding-left: clamp(20px, 6vw, 80px);
+    padding-right: clamp(20px, 6vw, 80px);
 }
 
 @keyframes gradientMove {
