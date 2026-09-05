@@ -1,0 +1,78 @@
+.speech-bubble {
+    position: absolute;
+    left: clamp(10px, calc(50% - 420px), 25%);
+    top: 32%;
+    padding: 18px 24px;
+    background: var(--quaternary);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: clamp(14px, 1.5vw, 18px);
+    font-weight: 700;
+    animation: bubbleFloat 3s ease-in-out infinite;
+}
+
+    .speech-bubble span {
+        display: block;
+        width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid transparent;
+    }
+
+        .speech-bubble span:first-child {
+            animation: typing-first 2.5s steps(42) forwards;
+        }
+
+        .speech-bubble span:last-child {
+            animation: typing-second 2s steps(35) 2.5s forwards;
+        }
+
+@keyframes bubbleFloat {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(15px, -12px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes typing-first {
+    0% {
+        width: 0;
+        border-right-color: var(--primary);
+    }
+
+    99% {
+        border-right-color: var(--primary);
+    }
+
+    100% {
+        width: 100%;
+        border-right-color: transparent;
+    }
+}
+
+@keyframes typing-second {
+    0% {
+        width: 0;
+        border-right-color: transparent;
+    }
+
+    1% {
+        border-right-color: var(--primary);
+    }
+
+    99% {
+        border-right-color: var(--primary);
+    }
+
+    100% {
+        width: 100%;
+        border-right-color: transparent;
+    }
+}

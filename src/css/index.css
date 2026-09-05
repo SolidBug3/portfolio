@@ -1,0 +1,45 @@
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    scrollbar-width: none;
+}
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+:root {
+    --primary: #6367FF;
+    --tercenary: #FFDBFD;
+    --quaternary: #FFFFFF;
+}
+
+@font-face {
+    font-family: 'JosefReduced';
+    src: url('/JosefReduced-Regular.ttf') format('truetype');
+}
+
+body {
+    background: linear-gradient( 120deg, #6367FF, #6367FF, #8F72FF, #6367FF );
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

@@ -1,0 +1,84 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    animation: slideDown 0.8s ease-out;
+}
+
+.header-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    color: var(--quaternary);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: clamp(40px, 5vw, 64px);
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    animation: logoAppear 0.5s ease-out 0.8s both;
+}
+
+nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 40px;
+}
+
+    nav a {
+        color: var(--quaternary);
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+    }
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -6px;
+            width: 0;
+            height: 2px;
+            background: var(--tercenary);
+            transform: translateX(-50%);
+            transition: width 0.25s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes logoAppear {
+    from {
+        transform: translateY(calc(-50% - 10px));
+    }
+
+    to {
+        transform: translateY(-50%);
+    }
+}

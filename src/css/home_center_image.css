@@ -1,0 +1,14 @@
+.hero-image {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+    .hero-image img {
+        width: clamp(280px, 45vw, 600px);
+        max-width: 80%;
+        height: auto;
+    }
