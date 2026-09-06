@@ -21,7 +21,7 @@
     bottom: 35px;
     left: auto;
     z-index: -1;
-    width: min(210px, 20vw);
+    width: min(105px, 10vw);
     aspect-ratio: 1;
     border: 7px solid #8BE35A;
     border-radius: 50%;
@@ -68,7 +68,7 @@
         right: 4%;
         left: auto;
         bottom: 25px;
-        width: min(180px, 24vw);
+        width: min(90px, 12vw);
         border-width: 6px;
         z-index: -1;
     }
@@ -88,7 +88,7 @@
     .contact-image-circle {
         right: 3%;
         bottom: 20px;
-        width: min(145px, 30vw);
+        width: min(72px, 15vw);
         border-width: 5px;
     }
 
