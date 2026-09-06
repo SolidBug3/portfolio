@@ -115,8 +115,6 @@ function App() {
 
                     <div className="logo">  <span>SolidBug</span> </div>
 
-
-
                     <nav className={menuOpen ? 'menu-open' : ''}>
                         <a href="#homepage" onClick={() => setMenuOpen(false)}>Accueuil</a>
                         <a href="#skills" onClick={() => setMenuOpen(false)}>Compétences</a>
@@ -134,8 +132,6 @@ function App() {
                     </button>
                 </div>
             </header>
-
-
 
             <main id="home">
                 <section id="homepage">
