@@ -89,24 +89,43 @@ function App() {
         const sections = document.querySelectorAll('section')
         const logo = document.querySelector('.logo')
 
-        const observer = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (window.innerWidth <= 1650) {
-                            logo?.classList.toggle('logo-hidden', entry.target.id !== 'homepage')
-                        } else {
-                            logo?.classList.remove('logo-hidden')
-                        }
-                    }
-                })
-            },
-            { threshold: 0.5 }
-        )
+        const updateLogo = () => {
+            if (!logo) { return }
 
-        sections.forEach(section => observer.observe(section))
+            if (window.innerWidth > 1650) {
+                logo.classList.remove('logo-hidden')
+                return
+            }
 
-        return () => observer.disconnect()
+            let closestSection: Element | null = null
+            let closestDistance = Infinity
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect()
+                const sectionCenter = rect.top + rect.height / 2
+                const distance = Math.abs(sectionCenter - window.innerHeight / 2)
+
+                if (distance < closestDistance) {
+                    closestDistance = distance
+                    closestSection = section
+                }
+            })
+
+            logo.classList.toggle(
+                'logo-hidden',
+                closestSection?.id !== 'homepage'
+            )
+        }
+
+        updateLogo()
+
+        window.addEventListener('scroll', updateLogo)
+        window.addEventListener('resize', updateLogo)
+
+        return () => {
+            window.removeEventListener('scroll', updateLogo)
+            window.removeEventListener('resize', updateLogo)
+        }
     }, [])
 
     const projects = [
