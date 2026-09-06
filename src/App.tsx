@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import './css/index.css'
 import './css/header.css';
 import './css/home_center_image.css';
-import './css/speech_bubble.css';
 import './css/speech_bubble2.css';
 import './css/section.css';
 import './css/cards.css';
@@ -133,7 +132,7 @@ function App() {
             name: 'Memodget',
             description: 'Gestion de budget',
             icon: `${import.meta.env.BASE_URL}playstore.png`,
-            link: 'https://solidbug.fr/#projects',
+            link: 'https://solidbug3.github.io/portfolio/#projects',
             images: [
                 `${import.meta.env.BASE_URL}p1s1.jpg`,
                 `${import.meta.env.BASE_URL}p1s2.jpg`,
@@ -190,7 +189,6 @@ function App() {
                                     alt=""
                                 />
                             </div>
-
                         </div>
 
                         <div className="about_info">
