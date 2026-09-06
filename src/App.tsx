@@ -160,7 +160,7 @@ function App() {
 
                     <nav className={menuOpen ? 'menu-open' : ''}>
                         <a href="#homepage" onClick={() => setMenuOpen(false)}>Accueil</a>
-                        <a href="#skills" onClick={() => setMenuOpen(false)}>Compétences</a>
+                        <a href="#about" onClick={() => setMenuOpen(false)}>À propos</a>
                         <a href="#projects" onClick={() => setMenuOpen(false)}>Projets</a>
                         <a href="#contact" onClick={() => setMenuOpen(false)}>Travaillons ensemble</a>
                     </nav>
@@ -178,43 +178,6 @@ function App() {
             <main id="home">
 
                 <section id="homepage">
-                    <div className="about-content">
-
-                        <div className="about-picture">
-
-                            <div className="speech-bubble">
-                                <span>À Dijon, on ne fait pas que de la moutarde.</span>
-                                <span>On développe aussi vos applications..</span>
-                            </div>
-
-                            <div className="about-hexagon">
-                                <div className="about-droplet about-droplet-1"></div>
-                                <div className="about-droplet about-droplet-2"></div>
-                                <div className="about-droplet about-droplet-3"></div>
-
-                                <img
-                                    src="rme.png"
-                                    alt=""
-                                />
-                            </div>
-                        </div>
-
-                        <div className="about_info">
-
-                            Moi c’est Milo, aka <strong>SolidBug</strong> !<br /><br />
-                            Un artiste à qui on a donné un clavier..<br />
-                            Et j’ai fini par en faire mon métier (rire)<br />
-                            Et puis est née une passion et une <strong>éthique de code</strong>.<br /><br />
-                            Un chasseur de « bug », mais pas ceux qui chantent en été.<br />
-                            Celui qui faconne l'image des projets et leur donne vie.<br />Ou plutot UI (...)<br /><br />
-                            Au plaisir de vous voir pour des aventures codesques et graphiques !<br /><br />
-
-                        </div>
-
-                    </div>
-                </section>
-
-                <section id="skills">
                     <div className="skills">
                         <div className="cards">
 
@@ -268,6 +231,43 @@ function App() {
                             </div>
 
                         </div>
+                    </div>
+                </section>
+
+                <section id="about">
+                    <div className="about-content">
+
+                        <div className="about-picture">
+
+                            <div className="speech-bubble">
+                                <span>À Dijon, on ne fait pas que de la moutarde.</span>
+                                <span>On développe aussi vos applications..</span>
+                            </div>
+
+                            <div className="about-hexagon">
+                                <div className="about-droplet about-droplet-1"></div>
+                                <div className="about-droplet about-droplet-2"></div>
+                                <div className="about-droplet about-droplet-3"></div>
+
+                                <img
+                                    src="rme.png"
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+
+                        <div className="about_info">
+
+                            Moi c’est Milo, aka <strong>SolidBug</strong> !<br /><br />
+                            Un artiste à qui on a donné un clavier..<br />
+                            Et j’ai fini par en faire mon métier (rire)<br />
+                            Et puis est née une passion et une <strong>éthique de code</strong>.<br /><br />
+                            Un chasseur de « bug », mais pas ceux qui chantent en été.<br />
+                            Celui qui faconne l'image des projets et leur donne vie.<br />Ou plutot UI (...)<br /><br />
+                            Au plaisir de vous voir pour des aventures codesques et graphiques !<br /><br />
+
+                        </div>
+
                     </div>
                 </section>
 
