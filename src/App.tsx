@@ -162,6 +162,10 @@ function App() {
                             </div>
 
                             <div className="about-hexagon">
+                                <div className="about-droplet about-droplet-1"></div>
+                                <div className="about-droplet about-droplet-2"></div>
+                                <div className="about-droplet about-droplet-3"></div>
+
                                 <img
                                     src="rme.png"
                                     alt=""
@@ -181,14 +185,14 @@ function App() {
                             Et j’ai fini par en faire mon métier (rire)<br />
                             Et puis est née une passion et une <strong>éthique de code</strong>.<br /><br />
                             Un chasseur de « bug », mais pas ceux qui chantent en été.<br /><br />
-                            Je matérialise vos projets à coups de clavier, de marteau et d’amour (sûrement)<br />
+                            Je matérialise vos projets à coups de clavier, de café et d’amour (sûrement)<br />
                             L’image de votre entreprise, votre « brand », comme l’on dirait de nos jours,<br />
                             je la façonne, la bichonne et lui donne forme sous une belle <strong>UI / UX</strong>.<br /><br />
                             L’art a la réputation de ne pas s’entremêler avec l’ombre de la science,<br />
                             eh bien c’est ici que vous les trouverez au rendez-vous,<br />
                             comme vous et moi, si je puis avoir l’honneur de travailler sur votre projet.<br /><br />
                             Au plaisir de vous voir pour de nouvelles aventures codesques et graphiques !<br /><br />
-                            <strong>PS</strong> : Comme vous l’aurez compris de par ma plume, les langues et l’écriture sont d’autres cordes à mon arc.<br />
+                            <strong>PS</strong> : Comme vous l’aurez compris de par ma plume, les langues et l’écriture sont d’autres cordes à mon arc.<br /><br />
                             Je peux traduire vos applications en <strong>anglais</strong> et <strong>japonais</strong>.
 
                         </div>

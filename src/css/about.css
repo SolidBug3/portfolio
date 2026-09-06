@@ -80,20 +80,6 @@
         animation: aboutBlobFloat 5s ease-in-out infinite;
     }
 
-    .about-hexagon::after {
-        content: "";
-        position: absolute;
-        z-index: 0;
-        width: 18px;
-        height: 18px;
-        right: 4%;
-        top: 12%;
-        background: #8BE35A;
-        border-radius: 50%;
-        box-shadow: -35px 35px 0 -5px #8BE35A, 35px 85px 0 -8px #8BE35A;
-        animation: aboutDotsFloat 4s ease-in-out infinite;
-    }
-
     .about-hexagon img {
         position: relative;
         z-index: 1;
@@ -109,6 +95,39 @@
         -webkit-mask-size: 100% 100%;
         mask-size: 100% 100%;
     }
+
+.about-droplet {
+    position: absolute;
+    z-index: 2;
+    background: #8BE35A;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.about-droplet-1 {
+    width: 14px;
+    height: 14px;
+    left: 78%;
+    top: 21%;
+    animation: dropletUp 4s ease-in-out infinite;
+}
+
+.about-droplet-2 {
+    width: 19px;
+    height: 19px;
+    left: 78%;
+    top: 21%;
+    animation: dropletDown 4.8s ease-in-out 1.5s infinite;
+}
+
+.about-droplet-3 {
+    width: 25px;
+    height: 25px;
+    left: 78%;
+    top: 21%;
+    animation: dropletUpShort 5.2s ease-in-out 3s infinite;
+}
 
 .about_info {
     flex: 1;
@@ -172,7 +191,11 @@
     }
 
     50% {
-        transform: rotate(-4deg) translate(8px, -10px);
+        transform: rotate(-5deg) translate(18px, -7px);
+    }
+
+    75% {
+        transform: rotate(-7deg) translate(-10px, 12px);
     }
 
     100% {
@@ -180,17 +203,114 @@
     }
 }
 
-@keyframes aboutDotsFloat {
+@keyframes dropletUp {
     0% {
-        transform: translate(0, 0);
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
     }
 
-    50% {
-        transform: translate(5px, -8px);
+    35% {
+        opacity: 1;
+        transform: translate(8px, -18px) scale(1);
+    }
+
+    55% {
+        opacity: 1;
+        transform: translate(20px, -32px) scale(1);
+    }
+
+    65% {
+        opacity: 1;
+        transform: translate(25px, -38px) scale(1.15);
+    }
+
+    72% {
+        opacity: 1;
+        transform: translate(25px, -38px) scale(1.6);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translate(20px, -32px) scale(0.9);
     }
 
     100% {
-        transform: translate(0, 0);
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes dropletDown {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+
+    35% {
+        opacity: 1;
+        transform: translate(10px, 15px) scale(1);
+    }
+
+    55% {
+        opacity: 1;
+        transform: translate(22px, 28px) scale(1);
+    }
+
+    65% {
+        opacity: 1;
+        transform: translate(28px, 34px) scale(1.15);
+    }
+
+    72% {
+        opacity: 1;
+        transform: translate(28px, 34px) scale(1.6);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translate(22px, 28px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes dropletUpShort {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+
+    35% {
+        opacity: 1;
+        transform: translate(7px, -15px) scale(1);
+    }
+
+    55% {
+        opacity: 1;
+        transform: translate(16px, -27px) scale(1);
+    }
+
+    65% {
+        opacity: 1;
+        transform: translate(20px, -32px) scale(1.15);
+    }
+
+    72% {
+        opacity: 1;
+        transform: translate(20px, -32px) scale(1.6);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translate(16px, -27px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
     }
 }
 
