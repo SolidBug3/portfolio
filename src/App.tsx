@@ -206,7 +206,7 @@ function App() {
                             Et j’ai fini par en faire mon métier (rire)<br />
                             Et puis est née une passion et une <strong>éthique de code</strong>.<br /><br />
                             Un chasseur de « bug », mais pas ceux qui chantent en été.<br />
-                            Celui qui faconne l'image des projets et leur donne vie.<br />Ou plutot UI.<br /><br />
+                            Celui qui faconne l'image des projets et leur donne vie.<br />Ou plutot UI (...)<br /><br />
                             Au plaisir de vous voir pour des aventures codesques et graphiques !<br /><br />
                             <strong>PS</strong> : Comme vous l’aurez compris de par ma plume, les langues et l’écriture sont d’autres cordes à mon arc.<br /><br />
                             Je peux traduire vos applications en <strong>anglais</strong> et <strong>japonais</strong>.
