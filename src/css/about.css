@@ -317,12 +317,13 @@
 @media (max-width: 900px) {
     .about-content {
         flex-direction: column;
-        gap: 45px;
+        gap: 0;
         padding: 100px 6% 60px;
     }
 
     .about-picture {
         width: clamp(150px, 35vw, 220px);
+        margin-bottom: 110px;
     }
 
     .about_info {
@@ -331,7 +332,8 @@
     }
 
     .speech-bubble {
-        top: -75px;
+        top: auto;
+        bottom: -95px;
         padding: clamp(10px, 3vw, 14px) clamp(12px, 4vw, 18px);
         font-size: clamp(12px, 3.5vw, 14px);
         border-radius: 16px;
@@ -341,14 +343,15 @@
 @media (max-width: 500px) {
     .about-content {
         padding: 100px 5% 45px;
-        gap: 35px;
+        gap: 0;
     }
 
     .about-picture {
         width: min(50vw, 200px);
+        margin-bottom: 100px;
     }
 
     .speech-bubble {
-        top: -65px;
+        bottom: -85px;
     }
 }
