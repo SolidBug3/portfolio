@@ -65,12 +65,13 @@
 
     .contact-image-circle {
         position: fixed;
-        right: 4%;
-        left: auto;
+        right: auto;
+        left: 50%;
         bottom: 25px;
         width: min(90px, 12vw);
         border-width: 6px;
         z-index: -1;
+        transform: translateX(-50%);
     }
 
     .contact-content .speech-bubble2 {
@@ -86,10 +87,12 @@
     }
 
     .contact-image-circle {
-        right: 3%;
+        right: auto;
+        left: 50%;
         bottom: 20px;
         width: min(72px, 15vw);
         border-width: 5px;
+        transform: translateX(-50%);
     }
 
     .contact-content .speech-bubble2 {
