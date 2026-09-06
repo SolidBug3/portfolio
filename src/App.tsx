@@ -201,7 +201,7 @@ function App() {
                                 <h3>Design</h3>
                                 <p>
                                     Je crée des interfaces modernes et adaptées à votre identité<br />
-                                    (Ca brille quoi)
+                                    (Ca brille)
                                 </p>
                                 <br />
                                 <p>
