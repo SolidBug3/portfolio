@@ -206,7 +206,7 @@ function App() {
                                 <br />
                                 <p>
                                     <div className="card-list">
-                                        <div><span>Ps</span> UX (Figma, Photoshop)</div>
+                                        <div><span>Ps</span> UI (Figma, Photoshop)</div>
                                         <div><span>✦</span> Vision artistique</div>
                                         <div><span>☕</span> 2 litres de café</div>
                                     </div>
