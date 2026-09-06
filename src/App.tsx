@@ -290,15 +290,6 @@ function App() {
                 <section id="contact">
                     <div className="contact">
                         <div className="contact-content">
-
-                            <div className="contact-image-circle contact-image-hidden">
-                                <img
-                                    className="contact-image"
-                                    src="me.png"
-                                    alt=""
-                                />
-                            </div>
-
                             <div className="speech-bubble2">
                                 J'attends vos plus belles idées de projets ici :<br /><br />
                                 <i>milosd21000@gmail.com</i><br /><br />
