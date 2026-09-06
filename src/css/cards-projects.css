@@ -26,6 +26,7 @@
     box-shadow: var(--card-shadow);
     transform: translateY(0);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
+    font-family: 'JosefReduced', sans-serif;
 }
 
     .card-project:hover {
