@@ -58,6 +58,8 @@
     .contact-content {
         width: 100%;
         min-height: 100vh;
+        flex-direction: column;
+        justify-content: center;
         padding: 0 5%;
     }
 
@@ -72,11 +74,8 @@
     }
 
     .contact-content .speech-bubble2 {
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        margin: 0;
-        transform: translate(-50%, -50%);
+        position: relative;
+        margin: 0 auto;
         z-index: 2;
     }
 }
@@ -96,9 +95,6 @@
     }
 
     .contact-content .speech-bubble2 {
-        left: 50%;
-        top: 50%;
-        margin: 0;
-        transform: translate(-50%, -50%);
+        margin: 0 auto;
     }
 }
