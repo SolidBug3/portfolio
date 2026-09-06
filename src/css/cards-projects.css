@@ -49,17 +49,22 @@
 
 .card-project-image {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 100%;
     width: 100%;
     height: 100%;
     object-fit: contain;
-    opacity: 0;
-    transition: opacity 1.2s ease;
+    opacity: 1;
+    transition: left 0.8s ease;
     filter: none;
 }
 
     .card-project-image.active {
-        opacity: 1;
+        left: 0;
+    }
+
+    .card-project-image:not(.active) {
+        left: 100%;
     }
 
 .card-project-info {
