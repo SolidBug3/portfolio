@@ -6,6 +6,64 @@ import './css/home_center_image.css';
 import './css/speech_bubble.css';
 import './css/section.css';
 import './css/cards.css';
+import './css/cards-projects.css';
+
+function ProjectCard
+({
+        name,
+        description,
+        icon,
+        link,
+        images
+    }: {
+        name: string,
+        description: string,
+        icon: string,
+        link: string,
+        images: string[]
+    }) {
+        const [currentImage, setCurrentImage] = useState(0)
+
+        useEffect(() => {
+            if (images.length <= 1) { return }
+
+            const interval = setInterval(() => { setCurrentImage((current) => (current + 1) % images.length) }, 3500)
+
+            return () => clearInterval(interval)
+        }, [images.length])
+
+        return (
+            <div className="card-project">
+
+                <div className="card-project-images">
+                    {images.map((image, index) => (
+                        <img
+                            key={image}
+                            className={`card-project-image ${index === currentImage ? 'active' : ''}`}
+                            src={image}
+                            alt={`${name} screenshot ${index + 1}`}
+                        />
+                    ))}
+                </div>
+
+                <div className="card-project-info">
+                    <h3>{name}</h3>
+                    <p>{description}</p>
+
+                    <a
+                        className="card-project-link"
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={icon} alt="" />
+                        <span>Voir sur le Play Store</span>
+                    </a>
+                </div>
+
+            </div>
+        )
+}
 
 function App() {
     const [menuOpen, setMenuOpen] = useState(false)
@@ -33,6 +91,22 @@ function App() {
 
         return () => observer.disconnect()
     }, [])
+
+    const projects = [
+        {
+            name: 'Memodget',
+            description: 'Gestion de budget',
+            icon: `${import.meta.env.BASE_URL}playstore.png`,
+            link: 'https://solidbug3.github.io/portfolio/#projects',
+            images: [
+                `${import.meta.env.BASE_URL}p1s1.jpg`,
+                `${import.meta.env.BASE_URL}p1s2.jpg`,
+                `${import.meta.env.BASE_URL}p1s3.jpg`,
+                `${import.meta.env.BASE_URL}p1s4.jpg`,
+                `${import.meta.env.BASE_URL}p1s5.jpg`
+            ]
+        }
+    ]
 
     return (
         <>
@@ -125,6 +199,23 @@ function App() {
                                 </p>
                             </div>
                         </div>
+                    </div>
+                </section>
+
+                <section id="projects">
+                    <div className="cards-projects">
+                        {projects.map((project) => (
+                            project.images.length > 0 && (
+                                <ProjectCard
+                                    key={project.name}
+                                    name={project.name}
+                                    description={project.description}
+                                    icon={project.icon}
+                                    link={project.link}
+                                    images={project.images}
+                                />
+                            )
+                        ))}
                     </div>
                 </section>
 

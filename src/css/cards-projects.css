@@ -1,0 +1,211 @@
+.cards-projects {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.card-project {
+    --card-title-color: #FFFFFF;
+    --card-text-color: rgba(255, 255, 255, 0.85);
+    --card-border-color: rgba(255, 255, 255, 0.25);
+    --card-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+    position: relative;
+    overflow: hidden;
+    flex: 0 1 calc((100% - 70px) / 3);
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    background: #000000;
+    border: 1px solid var(--card-border-color);
+    border-radius: 28px;
+    box-shadow: var(--card-shadow);
+    transform: translateY(0);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+    .card-project:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 30px 65px rgba(0, 0, 0, 0.25);
+    }
+
+.card-project-images {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+    .card-project-images::before {
+        content: "";
+        display: block;
+        width: 100%;
+        aspect-ratio: 9 / 16;
+    }
+
+.card-project-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    filter: none;
+}
+
+    .card-project-image.active {
+        opacity: 1;
+    }
+
+.card-project-info {
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 14px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+    .card-project-info h3 {
+        margin: 0 0 2px;
+        color: var(--card-title-color);
+        font-size: clamp(18px, 2vw, 24px);
+        font-weight: 700;
+    }
+
+    .card-project-info p {
+        margin: 0;
+        color: var(--card-text-color);
+        font-size: clamp(12px, 1.2vw, 14px);
+        line-height: 1.3;
+    }
+
+.card-project-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 7px;
+    color: #FFFFFF !important;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none !important;
+}
+
+    .card-project-link:visited {
+        color: #FFFFFF !important;
+    }
+
+    .card-project-link:hover {
+        color: #FFFFFF !important;
+    }
+
+    .card-project-link::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background: var(--tercenary);
+        transform: translateX(-50%);
+        transition: width 0.25s ease;
+    }
+
+    .card-project-link:hover::after {
+        width: 100%;
+    }
+
+    .card-project-link img {
+        display: block;
+        width: 24px !important;
+        height: 24px !important;
+        min-width: 24px;
+        max-width: 24px;
+        min-height: 24px;
+        max-height: 24px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+.card-project::before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: -100%;
+    left: -150%;
+    width: 70%;
+    height: 300%;
+    background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.22), transparent );
+    transform: rotate(20deg);
+    animation: projectGlassReflection 3.2s ease-in-out infinite;
+}
+
+@keyframes projectGlassReflection {
+    0% {
+        left: -150%;
+    }
+
+    8% {
+        left: 150%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .cards-projects {
+        gap: 25px;
+    }
+
+    .card-project {
+        flex: 0 1 calc((100% - 50px) / 3);
+        max-width: 260px;
+    }
+
+    .card-project-info {
+        bottom: 8px;
+        left: 8px;
+        right: 8px;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-projects {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .card-project {
+        flex: none;
+        width: min(100%, 300px);
+        max-width: 300px;
+    }
+
+    .card-project-info h3 {
+        font-size: 20px;
+    }
+
+    .card-project-info p {
+        font-size: 13px;
+    }
+
+    .card-project-link {
+        font-size: 13px;
+    }
+}
