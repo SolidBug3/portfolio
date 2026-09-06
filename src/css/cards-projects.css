@@ -223,7 +223,12 @@
         flex: none;
         width: min(100%, 300px);
         max-width: 300px;
+        transform: translateY(0);
     }
+
+        .card-project:hover {
+            transform: translateY(0);
+        }
 
     .card-project-info h3 {
         font-size: 20px;
