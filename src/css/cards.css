@@ -152,7 +152,12 @@
         max-width: 360px;
         min-height: 320px;
         padding: 35px 25px;
+        transform: translateY(0);
     }
+
+        .card:hover {
+            transform: translateY(0);
+        }
 
     .card-icon {
         font-size: 60px;
