@@ -81,15 +81,13 @@ function App() {
                                 <div className="card-icon">⚙</div>
                                 <h3>Développement fullstack</h3>
                                 <p>
-                                    Pour les non devs, concrètement, <br />
-                                    C'est beau et ca marche aussi.
+                                    (C'est beau et ca marche aussi)
                                 </p>
                                 <br />
                                 <p>
                                     <div className="card-list">
-                                        <div><span>⚛</span> React.js</div>
-                                        <div><span>▣</span> SQL</div>
-                                        <div><span>☕</span> 2 litres de café</div>
+                                        <div><span>⚛</span>UI (React.js)</div>
+                                        <div><span>▣</span>Base de donnée (MySQL)</div>
                                     </div>
                                 </p>
                             </div>
@@ -98,14 +96,15 @@ function App() {
                                 <div className="card-icon">🎨</div>
                                 <h3>Design</h3>
                                 <p>
-                                    Je crée des interfaces modernes et adaptées à votre identité.
+                                    Je crée des interfaces modernes et adaptées à votre identité<br />
+                                    (Ca brille quoi)
                                 </p>
                                 <br />
                                 <p>
                                     <div className="card-list">
-                                        <div><span>Ps</span> Photoshop</div>
-                                        <div><span>Fi</span> Figma</div>
+                                        <div><span>Ps</span> UX (Figma, Photoshop)</div>
                                         <div><span>✦</span> Vision artistique</div>
+                                        <div><span>☕</span> 2 litres de café</div>
                                     </div>
                                 </p>
                             </div>
