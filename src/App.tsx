@@ -4,6 +4,7 @@ import './css/index.css'
 import './css/header.css';
 import './css/home_center_image.css';
 import './css/speech_bubble.css';
+import './css/speech_bubble2.css';
 import './css/section.css';
 import './css/cards.css';
 import './css/cards-projects.css';
@@ -235,9 +236,10 @@ function App() {
 
                 <section id="contact">
                     <div className="contact">
-                        <center>J'attends vos plus belles idées de projets ici :<br /><br />
+                        <div className="speech-bubble2">J'attends vos plus belles idées de projets ici :<br /><br />
                             <i>milosd21000@gmail.com</i><br /><br />
-                            <strong>Devis gratuis</strong>, parlons en ensemble !</center>
+                            <strong>Devis gratuis</strong>, parlons en ensemble !
+                        </div>
                     </div>
                 </section>
 
