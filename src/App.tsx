@@ -118,8 +118,6 @@ function App() {
             images: [
                 `${import.meta.env.BASE_URL}p1s1.jpg`,
                 `${import.meta.env.BASE_URL}p1s2.jpg`,
-                `${import.meta.env.BASE_URL}p1s3.jpg`,
-                `${import.meta.env.BASE_URL}p1s4.jpg`,
                 `${import.meta.env.BASE_URL}p1s5.jpg`
             ]
         }
