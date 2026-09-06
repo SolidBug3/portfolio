@@ -1,0 +1,133 @@
+.about-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 6%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(40px, 7vw, 100px);
+}
+
+.about-picture {
+    position: relative;
+    width: clamp(160px, 20vw, 280px);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-hexagon {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .about-hexagon::before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        width: 85%;
+        height: 85%;
+        background: #8BE35A;
+        border-radius: 48% 52% 58% 42% / 55% 45% 55% 45%;
+        transform: rotate(-8deg);
+        filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.12));
+        animation: aboutBlobFloat 5s ease-in-out infinite;
+    }
+
+    .about-hexagon::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        width: 18px;
+        height: 18px;
+        right: 4%;
+        top: 12%;
+        background: #8BE35A;
+        border-radius: 50%;
+        box-shadow: -35px 35px 0 -5px #8BE35A, 35px 85px 0 -8px #8BE35A;
+        animation: aboutDotsFloat 4s ease-in-out infinite;
+    }
+
+    .about-hexagon img {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+        filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.15));
+        clip-path: ellipse(42.5% 42.5% at 50% 50%);
+        -webkit-mask-image: linear-gradient( to bottom, #000 0%, #000 55%, rgba(0, 0, 0, 0.95) 68%, rgba(0, 0, 0, 0.75) 78%, rgba(0, 0, 0, 0.4) 88%, transparent 100% );
+        mask-image: linear-gradient( to bottom, #000 0%, #000 55%, rgba(0, 0, 0, 0.95) 68%, rgba(0, 0, 0, 0.75) 78%, rgba(0, 0, 0, 0.4) 88%, transparent 100% );
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+
+.about_info {
+    flex: 1;
+    max-width: 750px;
+}
+
+@keyframes aboutBlobFloat {
+    0% {
+        transform: rotate(-8deg) translate(0, 0);
+    }
+
+    50% {
+        transform: rotate(-4deg) translate(8px, -10px);
+    }
+
+    100% {
+        transform: rotate(-8deg) translate(0, 0);
+    }
+}
+
+@keyframes aboutDotsFloat {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(5px, -8px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@media (max-width: 900px) {
+    .about-content {
+        flex-direction: column;
+        gap: 45px;
+        padding: 60px 6%;
+    }
+
+    .about-picture {
+        width: clamp(150px, 35vw, 220px);
+    }
+
+    .about_info {
+        width: 100%;
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 500px) {
+    .about-content {
+        padding: 45px 5%;
+        gap: 35px;
+    }
+
+    .about-picture {
+        width: min(50vw, 200px);
+    }
+}

@@ -8,6 +8,7 @@ import './css/speech_bubble2.css';
 import './css/section.css';
 import './css/cards.css';
 import './css/cards-projects.css';
+import './css/about.css';
 
 function ProjectCard
     ({
@@ -236,7 +237,8 @@ function App() {
 
                 <section id="contact">
                     <div className="contact">
-                        <div className="speech-bubble2">J'attends vos plus belles idées de projets ici :<br /><br />
+                        <div className="speech-bubble2">
+                            J'attends vos plus belles idées de projets ici :<br /><br />
                             <i>milosd21000@gmail.com</i><br /><br />
                             <strong>Devis gratuis</strong>, parlons en ensemble !
                         </div>
@@ -244,21 +246,34 @@ function App() {
                 </section>
 
                 <section id="about">
-                    <div className="about_info">
-                        Moi c’est Milo, aka <strong>SolidBug</strong> !<br /><br />
-                        Un artiste à qui on a donné un clavier..<br />
-                        Et j’ai fini par en faire mon métier (rire)<br />
-                        Et puis est née une passion et une <strong>éthique de code</strong>.<br /><br />
-                        Un chasseur de « bug », mais pas ceux qui chantent en été.<br /><br />
-                        Je matérialise vos projets à coups de clavier, de marteau et d’amour (sûrement)<br />
-                        L’image de votre entreprise, votre « brand », comme l’on dirait de nos jours,<br />
-                        je la façonne, la bichonne et lui donne forme sous une belle <strong>UI / UX</strong>.<br /><br />
-                        L’art a la réputation de ne pas s’entremêler avec l’ombre de la science,<br />
-                        eh bien c’est ici que vous les trouverez au rendez-vous,<br />
-                        comme vous et moi, si je puis avoir l’honneur de travailler sur votre projet.<br /><br />
-                        Au plaisir de vous voir pour de nouvelles aventures codesques et graphiques !<br /><br />
-                        <strong>PS</strong> : Comme vous l’aurez compris de par ma plume, les langues et l’écriture sont d’autres cordes à mon arc.<br />
-                        Je peux traduire vos applications en <strong>anglais</strong> et <strong>japonais</strong>.
+                    <div className="about-content">
+
+                        <div className="about-picture">
+                            <div className="about-hexagon">
+                                <img
+                                    src={`rme.png`}
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+
+                        <div className="about_info">
+                            Moi c’est Milo, aka <strong>SolidBug</strong> !<br /><br />
+                            Un artiste à qui on a donné un clavier..<br />
+                            Et j’ai fini par en faire mon métier (rire)<br />
+                            Et puis est née une passion et une <strong>éthique de code</strong>.<br /><br />
+                            Un chasseur de « bug », mais pas ceux qui chantent en été.<br /><br />
+                            Je matérialise vos projets à coups de clavier, de marteau et d’amour (sûrement)<br />
+                            L’image de votre entreprise, votre « brand », comme l’on dirait de nos jours,<br />
+                            je la façonne, la bichonne et lui donne forme sous une belle <strong>UI / UX</strong>.<br /><br />
+                            L’art a la réputation de ne pas s’entremêler avec l’ombre de la science,<br />
+                            eh bien c’est ici que vous les trouverez au rendez-vous,<br />
+                            comme vous et moi, si je puis avoir l’honneur de travailler sur votre projet.<br /><br />
+                            Au plaisir de vous voir pour de nouvelles aventures codesques et graphiques !<br /><br />
+                            <strong>PS</strong> : Comme vous l’aurez compris de par ma plume, les langues et l’écriture sont d’autres cordes à mon arc.<br />
+                            Je peux traduire vos applications en <strong>anglais</strong> et <strong>japonais</strong>.
+                        </div>
+
                     </div>
                 </section>
             </main>
