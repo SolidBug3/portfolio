@@ -173,8 +173,8 @@ function App() {
                                 <br />
                                 <p>
                                     <div className="card-list">
-                                        <div><span>🤖</span>Android (C# / Android)</div>
                                         <div><span>⚛</span>Web (React.js)</div>
+                                        <div><span>🤖</span>Android (C# / Android)</div>
                                         <div><span>▣</span>Base de donnée (MySQL)</div>
                                     </div>
                                 </p>
