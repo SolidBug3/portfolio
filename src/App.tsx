@@ -96,7 +96,7 @@ function App() {
                 return
             }
 
-            let closestSection: Element | null = null
+            let closestSectionId = ''
             let closestDistance = Infinity
 
             sections.forEach(section => {
@@ -106,13 +106,13 @@ function App() {
 
                 if (distance < closestDistance) {
                     closestDistance = distance
-                    closestSection = section
+                    closestSectionId = section.id
                 }
             })
 
             logo.classList.toggle(
                 'logo-hidden',
-                closestSection?.id !== 'homepage'
+                closestSectionId !== 'homepage'
             )
         }
 
