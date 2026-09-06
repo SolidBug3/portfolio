@@ -15,7 +15,7 @@ header {
 }
 
 .logo {
-    color: var(--quaternary);
+    color: #B8FF82;
     text-transform: uppercase;
     font-weight: 700;
     font-size: clamp(40px, 5vw, 64px);
