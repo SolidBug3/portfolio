@@ -8,6 +8,7 @@ import './css/section.css';
 import './css/cards.css';
 import './css/cards-projects.css';
 import './css/about.css';
+import './css/contact.css';
 
 function ProjectCard
     ({
@@ -87,14 +88,10 @@ function App() {
     useEffect(() => {
         const sections = document.querySelectorAll('section')
         const logo = document.querySelector('.logo')
+        const contactImage = document.querySelector('.contact-image-circle')
 
         const updateLogo = () => {
             if (!logo) { return }
-
-            if (window.innerWidth > 1650) {
-                logo.classList.remove('logo-hidden')
-                return
-            }
 
             let closestSectionId = ''
             let closestDistance = Infinity
@@ -110,10 +107,21 @@ function App() {
                 }
             })
 
-            logo.classList.toggle(
-                'logo-hidden',
-                closestSectionId !== 'homepage'
-            )
+            if (window.innerWidth > 1650) {
+                logo.classList.remove('logo-hidden')
+            } else {
+                logo.classList.toggle(
+                    'logo-hidden',
+                    closestSectionId !== 'homepage'
+                )
+            }
+
+            if (contactImage) {
+                contactImage.classList.toggle(
+                    'contact-image-hidden',
+                    window.innerWidth <= 900 || closestSectionId === 'homepage'
+                )
+            }
         }
 
         updateLogo()
@@ -201,9 +209,6 @@ function App() {
                             Je matérialise vos projets à coups de clavier, de café et d’amour (sûrement)<br />
                             L’image de votre entreprise, votre « brand », comme l’on dirait de nos jours,<br />
                             je la façonne, la bichonne et lui donne forme sous une belle <strong>UI / UX</strong>.<br /><br />
-                            L’art a la réputation de ne pas s’entremêler avec l’ombre de la science,<br />
-                            eh bien c’est ici que vous les trouverez au rendez-vous,<br />
-                            comme vous et moi, si je puis avoir l’honneur de travailler sur votre projet.<br /><br />
                             Au plaisir de vous voir pour de nouvelles aventures codesques et graphiques !<br /><br />
                             <strong>PS</strong> : Comme vous l’aurez compris de par ma plume, les langues et l’écriture sont d’autres cordes à mon arc.<br /><br />
                             Je peux traduire vos applications en <strong>anglais</strong> et <strong>japonais</strong>.
@@ -289,10 +294,22 @@ function App() {
 
                 <section id="contact">
                     <div className="contact">
-                        <div className="speech-bubble2">
-                            J'attends vos plus belles idées de projets ici :<br /><br />
-                            <i>milosd21000@gmail.com</i><br /><br />
-                            <strong>Devis gratuis</strong>, parlons en ensemble !
+                        <div className="contact-content">
+
+                            <div className="contact-image-circle contact-image-hidden">
+                                <img
+                                    className="contact-image"
+                                    src="me.png"
+                                    alt=""
+                                />
+                            </div>
+
+                            <div className="speech-bubble2">
+                                J'attends vos plus belles idées de projets ici :<br /><br />
+                                <i>milosd21000@gmail.com</i><br /><br />
+                                <strong>Devis gratuis</strong>, parlons en ensemble !
+                            </div>
+
                         </div>
                     </div>
                 </section>
