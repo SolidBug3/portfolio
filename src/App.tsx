@@ -107,19 +107,18 @@ function App() {
                 }
             })
 
-            if (window.innerWidth > 1650) {
-                logo.classList.remove('logo-hidden')
-            } else {
-                logo.classList.toggle(
-                    'logo-hidden',
-                    closestSectionId !== 'homepage'
-                )
-            }
+            const isHomepage = closestSectionId === 'homepage'
+            const isMobile = window.innerWidth <= 1650
+
+            logo.classList.toggle(
+                'logo-hidden',
+                isMobile && !isHomepage
+            )
 
             if (contactImage) {
                 contactImage.classList.toggle(
                     'contact-image-hidden',
-                    window.innerWidth <= 900 || closestSectionId === 'homepage'
+                    window.innerWidth <= 900 || isHomepage
                 )
             }
         }
@@ -202,7 +201,7 @@ function App() {
                                 <h3>Design</h3>
                                 <p>
                                     Je crée des interfaces modernes et adaptées à votre identité<br />
-                                    (Ca brille)
+                                    (Ca brille quoi)
                                 </p>
                                 <br />
                                 <p>
