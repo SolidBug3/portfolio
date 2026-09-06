@@ -54,7 +54,7 @@
     height: 100%;
     object-fit: contain;
     opacity: 0;
-    transition: opacity 0.8s ease;
+    transition: opacity 1.2s ease;
     filter: none;
 }
 
@@ -147,7 +147,7 @@
     left: -150%;
     width: 70%;
     height: 300%;
-    background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.22), transparent );
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
     transform: rotate(20deg);
     animation: projectGlassReflection 3.2s ease-in-out infinite;
 }

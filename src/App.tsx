@@ -9,7 +9,7 @@ import './css/cards.css';
 import './css/cards-projects.css';
 
 function ProjectCard
-({
+    ({
         name,
         description,
         icon,
@@ -22,47 +22,47 @@ function ProjectCard
         link: string,
         images: string[]
     }) {
-        const [currentImage, setCurrentImage] = useState(0)
+    const [currentImage, setCurrentImage] = useState(0)
 
-        useEffect(() => {
-            if (images.length <= 1) { return }
+    useEffect(() => {
+        if (images.length <= 1) { return }
 
-            const interval = setInterval(() => { setCurrentImage((current) => (current + 1) % images.length) }, 3500)
+        const interval = setInterval(() => { setCurrentImage((current) => (current + 1) % images.length) }, 2500)
 
-            return () => clearInterval(interval)
-        }, [images.length])
+        return () => clearInterval(interval)
+    }, [images.length])
 
-        return (
-            <div className="card-project">
+    return (
+        <div className="card-project">
 
-                <div className="card-project-images">
-                    {images.map((image, index) => (
-                        <img
-                            key={image}
-                            className={`card-project-image ${index === currentImage ? 'active' : ''}`}
-                            src={image}
-                            alt={`${name} screenshot ${index + 1}`}
-                        />
-                    ))}
-                </div>
-
-                <div className="card-project-info">
-                    <h3>{name}</h3>
-                    <p>{description}</p>
-
-                    <a
-                        className="card-project-link"
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img src={icon} alt="" />
-                        <span>Voir sur le Play Store</span>
-                    </a>
-                </div>
-
+            <div className="card-project-images">
+                {images.map((image, index) => (
+                    <img
+                        key={image}
+                        className={`card-project-image ${index === currentImage ? 'active' : ''}`}
+                        src={image}
+                        alt={`${name} screenshot ${index + 1}`}
+                    />
+                ))}
             </div>
-        )
+
+            <div className="card-project-info">
+                <h3>{name}</h3>
+                <p>{description}</p>
+
+                <a
+                    className="card-project-link"
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img src={icon} alt="" />
+                    <span>Voir sur le Play Store</span>
+                </a>
+            </div>
+
+        </div>
+    )
 }
 
 function App() {
@@ -116,6 +116,7 @@ function App() {
                     <div className="logo">  <span>SolidBug</span> </div>
 
 
+
                     <nav className={menuOpen ? 'menu-open' : ''}>
                         <a href="#homepage" onClick={() => setMenuOpen(false)}>Accueuil</a>
                         <a href="#skills" onClick={() => setMenuOpen(false)}>Compétences</a>
@@ -135,13 +136,14 @@ function App() {
             </header>
 
 
+
             <main id="home">
-            <section id ="homepage">
-                <div className="hero-image">
-                    <div className="speech-bubble">
-                        <span>À Dijon, on ne fait pas que de la moutarde.</span>
-                        <span>On développe aussi vos applications..</span>
-                    </div>
+                <section id="homepage">
+                    <div className="hero-image">
+                        <div className="speech-bubble">
+                            <span>À Dijon, on ne fait pas que de la moutarde.</span>
+                            <span>On développe aussi vos applications..</span>
+                        </div>
 
                         <img src={`${import.meta.env.BASE_URL}me.png`} alt="" />
                     </div>
@@ -222,7 +224,7 @@ function App() {
                 <section id="contact">
                     <div className="contact">
                         <center>J'attends vos plus belles idées de projets ici :<br /><br />
-                        <i>milosd21000@gmail.com</i><br /><br />
+                            <i>milosd21000@gmail.com</i><br /><br />
                             <strong>Devis gratuis</strong>, parlons en ensemble !</center>
                     </div>
                 </section>
