@@ -133,7 +133,7 @@ function App() {
             name: 'Memodget',
             description: 'Gestion de budget',
             icon: `${import.meta.env.BASE_URL}playstore.png`,
-            link: 'https://solidbug3.github.io/portfolio/#projects',
+            link: 'https://solidbug.fr/#projects',
             images: [
                 `${import.meta.env.BASE_URL}p1s1.jpg`,
                 `${import.meta.env.BASE_URL}p1s2.jpg`,
@@ -172,7 +172,9 @@ function App() {
 
                 <section id="homepage">
                     <div className="about-content">
+
                         <div className="about-picture">
+
                             <div className="speech-bubble">
                                 <span>À Dijon, on ne fait pas que de la moutarde.</span>
                                 <span>On développe aussi vos applications..</span>
@@ -188,14 +190,10 @@ function App() {
                                     alt=""
                                 />
                             </div>
+
                         </div>
 
                         <div className="about_info">
-
-                            <div className="speech-bubble">
-                                <span>À Dijon, on ne fait pas que de la moutarde.</span>
-                                <span>On développe aussi vos applications..</span>
-                            </div>
 
                             Moi c’est Milo, aka <strong>SolidBug</strong> !<br /><br />
                             Un artiste à qui on a donné un clavier..<br />
