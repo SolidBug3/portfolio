@@ -133,7 +133,7 @@ function App() {
                     <nav className={menuOpen ? 'menu-open' : ''}>
                         <a href="#homepage" onClick={() => setMenuOpen(false)}>Accueuil</a>
                         <a href="#skills" onClick={() => setMenuOpen(false)}>Compétences</a>
-                        <a href="#projects" onClick={() => setMenuOpen(false)}>Exemple de projets</a>
+                        <a href="#projects" onClick={() => setMenuOpen(false)}>Projets</a>
                         <a href="#contact" onClick={() => setMenuOpen(false)}>Travaillons ensemble</a>
                         <a href="#about" onClick={() => setMenuOpen(false)}>A propos</a>
                     </nav>
