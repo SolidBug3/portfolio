@@ -94,26 +94,35 @@
 .card-list {
     position: relative;
     z-index: 1;
-    display: grid;
-    grid-template-columns: 28px auto;
-    column-gap: 12px;
-    row-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin-top: 5px;
+    width: 100%;
     text-align: left;
 }
 
     .card-list div {
-        display: contents;
-        color: var(--card-text-color);
-        font-size: clamp(14px, 1.4vw, 17px);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 7px 12px;
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.45);
+        border-radius: 12px;
+        color: #FFFFFF;
+        font-size: clamp(16px, 1.6vw, 19px);
         font-weight: 700;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     }
 
     .card-list span {
+        flex-shrink: 0;
         width: 28px;
         text-align: center;
-        color: var(--card-icon-color);
+        color: #FFFFFF;
         font-size: 20px;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     }
 
 @keyframes glassReflection {
@@ -158,11 +167,11 @@
     }
 
     .card-list {
-        grid-template-columns: 28px auto;
+        width: 100%;
     }
 
         .card-list div {
-            font-size: 15px;
+            font-size: 17px;
         }
 
         .card-list img {
