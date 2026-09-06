@@ -5,6 +5,7 @@ import './css/header.css';
 import './css/home_center_image.css';
 import './css/speech_bubble.css';
 import './css/section.css';
+import './css/cards.css';
 
 function App() {
     const [menuOpen, setMenuOpen] = useState(false)
@@ -43,9 +44,10 @@ function App() {
 
                     <nav className={menuOpen ? 'menu-open' : ''}>
                         <a href="#homepage" onClick={() => setMenuOpen(false)}>Accueuil</a>
-                        <a href="#about" onClick={() => setMenuOpen(false)}>A propos</a>
+                        <a href="#skills" onClick={() => setMenuOpen(false)}>Compétences</a>
                         <a href="#projects" onClick={() => setMenuOpen(false)}>Example de projets</a>
                         <a href="#contact" onClick={() => setMenuOpen(false)}>Travaillons ensemble</a>
+                        <a href="#about" onClick={() => setMenuOpen(false)}>A propos</a>
                     </nav>
 
                     <button
@@ -71,6 +73,70 @@ function App() {
                     </div>
                 </section>
 
+                <section id="skills">
+                    <div className="skills">
+                        <div className="cards">
+
+                            <div className="card">
+                                <div className="card-icon">⚙</div>
+                                <h3>Développement fullstack</h3>
+                                <p>
+                                    Pour les non devs, concrètement, <br />
+                                    C'est beau et ca marche aussi.
+                                </p>
+                                <br />
+                                <p>
+                                    <div className="card-list">
+                                        <div><span>⚛</span> React.js</div>
+                                        <div><span>▣</span> SQL</div>
+                                        <div><span>☕</span> 2 litres de café</div>
+                                    </div>
+                                </p>
+                            </div>
+
+                            <div className="card">
+                                <div className="card-icon">🎨</div>
+                                <h3>Design</h3>
+                                <p>
+                                    Je crée des interfaces modernes et adaptées à votre identité.
+                                </p>
+                                <br />
+                                <p>
+                                    <div className="card-list">
+                                        <div><span>Ps</span> Photoshop</div>
+                                        <div><span>Fi</span> Figma</div>
+                                        <div><span>✦</span> Vision artistique</div>
+                                    </div>
+                                </p>
+                            </div>
+
+                            <div className="card">
+                                <div className="card-icon">文</div>
+                                <h3>Traduction</h3>
+                                <p>
+                                    J'adapte votre identité a l'internationale.
+                                </p>
+                                <br />
+                                <p>
+                                    <div className="card-list">
+                                        <div><span>🥖</span> Français</div>
+                                        <div><span>🇬🇧</span> Anglais</div>
+                                        <div><span>日</span> Japonais</div>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contact">
+                    <div className="contact">
+                        <center>J'attends vos plus belles idées de projets ici :<br /><br />
+                        <i>milosd21000@gmail.com</i><br /><br />
+                            <strong>Devis gratuis</strong>, parlons en ensemble !</center>
+                    </div>
+                </section>
+
                 <section id="about">
                     <div className="about_info">
                         Moi c’est Milo, aka <strong>SolidBug</strong> !<br /><br />
@@ -87,14 +153,6 @@ function App() {
                         Au plaisir de vous voir pour de nouvelles aventures codesques et graphiques !<br /><br />
                         <strong>PS</strong> : Comme vous l’aurez compris de par ma plume, les langues et l’écriture sont d’autres cordes à mon arc.<br />
                         Je peux traduire vos applications en <strong>anglais</strong> et <strong>japonais</strong>.
-                    </div>
-                </section>
-
-                <section id="contact">
-                    <div className="contact">
-                        <center>J'attends vos plus belles idées de projets ici :<br /><br />
-                        <i>milosd21000@gmail.com</i><br /><br />
-                        <strong>Devis gratuis</strong>, parlons en ensemble !</center>
                     </div>
                 </section>
             </main>
