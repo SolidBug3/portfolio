@@ -23,27 +23,42 @@ function ProjectCard
         images: string[]
     }) {
     const [currentImage, setCurrentImage] = useState(0)
+    const [nextImage, setNextImage] = useState(0)
+    const [isSliding, setIsSliding] = useState(false)
 
     useEffect(() => {
         if (images.length <= 1) { return }
 
-        const interval = setInterval(() => { setCurrentImage((current) => (current + 1) % images.length) }, 2500)
+        const interval = setInterval(() => {
+            setNextImage((currentImage + 1) % images.length)
+            setIsSliding(true)
+
+            setTimeout(() => {
+                setCurrentImage((currentImage + 1) % images.length)
+                setIsSliding(false)
+            }, 800)
+        }, 2500)
 
         return () => clearInterval(interval)
-    }, [images.length])
+    }, [images.length, currentImage])
 
     return (
         <div className="card-project">
 
             <div className="card-project-images">
-                {images.map((image, index) => (
+                <img
+                    className={`card-project-image ${isSliding ? 'slide-current' : 'current'}`}
+                    src={images[currentImage]}
+                    alt={`${name} screenshot ${currentImage + 1}`}
+                />
+
+                {isSliding && (
                     <img
-                        key={image}
-                        className={`card-project-image ${index === currentImage ? 'active' : ''}`}
-                        src={image}
-                        alt={`${name} screenshot ${index + 1}`}
+                        className="card-project-image slide-next"
+                        src={images[nextImage]}
+                        alt={`${name} screenshot ${nextImage + 1}`}
                     />
-                ))}
+                )}
             </div>
 
             <div className="card-project-info">
