@@ -90,8 +90,8 @@
         object-position: center;
         filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.15));
         clip-path: ellipse(42.5% 42.5% at 50% 50%);
-        -webkit-mask-image: linear-gradient( to bottom, #000 0%, #000 55%, rgba(0, 0, 0, 0.95) 68%, rgba(0, 0, 0, 0.75) 78%, rgba(0, 0, 0, 0.4) 88%, transparent 100% );
-        mask-image: linear-gradient( to bottom, #000 0%, #000 55%, rgba(0, 0, 0, 0.95) 68%, rgba(0, 0, 0, 0.75) 78%, rgba(0, 0, 0, 0.4) 88%, transparent 100% );
+        -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, rgba(0, 0, 0, 0.95) 68%, rgba(0, 0, 0, 0.75) 78%, rgba(0, 0, 0, 0.4) 88%, transparent 100%);
+        mask-image: linear-gradient(to bottom, #000 0%, #000 55%, rgba(0, 0, 0, 0.95) 68%, rgba(0, 0, 0, 0.75) 78%, rgba(0, 0, 0, 0.4) 88%, transparent 100%);
         -webkit-mask-size: 100% 100%;
         mask-size: 100% 100%;
     }
@@ -334,6 +334,8 @@
     .speech-bubble {
         top: auto;
         bottom: -95px;
+        left: 50%;
+        transform: translateX(-50%);
         padding: clamp(10px, 3vw, 14px) clamp(12px, 4vw, 18px);
         font-size: clamp(12px, 3.5vw, 14px);
         border-radius: 16px;
@@ -353,5 +355,7 @@
 
     .speech-bubble {
         bottom: -85px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
