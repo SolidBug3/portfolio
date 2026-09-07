@@ -3,9 +3,8 @@ import '../css/background.css'
 
 import GoogleButton from '../components/GoogleButton'
 import Presentation from '../components/Presentation'
+import HomeProps from '../components/Session'
 
-
-import HomeProps from '/session'
 
 export default function Home({ user, handleGoogleLogin, handleLogout }: HomeProps) {
     return (
