@@ -29,6 +29,7 @@ body {
     background: linear-gradient(120deg, #6367FF, #6367FF, #8F72FF, #6367FF);
     background-size: 300% 300%;
     animation: gradientMove 8s ease infinite;
+    overflow-x: hidden;
 }
 
 section {
