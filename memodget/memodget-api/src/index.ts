@@ -1,5 +1,6 @@
 import { createClient } from '@libsql/client/web'
 import { createRemoteJWKSet, jwtVerify } from 'jose'
+import { handleDatabaseRequest } from '../../database/handler'
 
 interface Env {
     TURSO_DATABASE_URL: string
@@ -52,6 +53,16 @@ export default {
         })
 
         const path = new URL(request.url).pathname
+
+        const databaseResponse = await handleDatabaseRequest(
+            request,
+            db,
+            headers
+        )
+
+        if (databaseResponse) {
+            return databaseResponse
+        }
 
         if (
             request.method === 'POST' &&

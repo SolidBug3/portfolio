@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body.dashboard-page {
+    padding: 0;
+    margin: 0;
+    background: #F5F7FB;
+    font-family: 'Inter', sans-serif;
+}
+
+.dashboard {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+    .dashboard .panel {
+        position: sticky;
+        top: 0;
+        flex-shrink: 0;
+        width: clamp(45px, 5vw, 65px);
+        height: 100vh;
+        box-sizing: border-box;
+        padding: clamp(8px, 1vw, 12px) clamp(6px, 0.8vw, 10px);
+        overflow: hidden;
+        background: linear-gradient( 120deg, #15182B, #6367FF, #8F72FF, #6367FF, #15182B );
+        background-size: 300% 300%;
+        animation: gradientMove 8s ease infinite;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        transition: width 0.3s ease, box-shadow 0.3s ease;
+        z-index: 1000;
+        font-family: 'Inter', sans-serif;
+        box-shadow: 3px 0 20px rgba(15, 23, 42, 0.12);
+    }
+
+        .dashboard .panel:hover {
+            width: clamp(160px, 18vw, 210px);
+            box-shadow: 8px 0 30px rgba(15, 23, 42, 0.18);
+        }
+
+        .dashboard .panel nav {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(2px, 0.4vw, 6px);
+            align-items: stretch;
+        }
+
+            .dashboard .panel nav button {
+                display: grid;
+                grid-template-columns: clamp(26px, 2.5vw, 34px) 1fr;
+                align-items: center;
+                width: 100%;
+                min-height: clamp(34px, 3vw, 42px);
+                padding: clamp(3px, 0.4vw, 6px);
+                box-sizing: border-box;
+                border: none;
+                border-radius: clamp(6px, 0.6vw, 10px);
+                background: transparent;
+                cursor: pointer;
+                font-family: 'Inter', sans-serif;
+                transition: background 0.2s ease, transform 0.2s ease;
+            }
+
+                .dashboard .panel nav button:hover {
+                    background: rgba(255, 255, 255, 0.10);
+                    transform: translateX(2px);
+                }
+
+                .dashboard .panel nav button img {
+                    width: clamp(20px, 2.2vw, 28px);
+                    height: clamp(20px, 2.2vw, 28px);
+                    object-fit: contain;
+                    filter: invert(1);
+                    opacity: 0.8;
+                    transition: opacity 0.2s ease, transform 0.2s ease;
+                }
+
+                .dashboard .panel nav button:hover img {
+                    opacity: 1;
+                    transform: scale(1.04);
+                }
+
+                .dashboard .panel nav button span {
+                    display: none;
+                    width: 100%;
+                    text-align: center;
+                    white-space: nowrap;
+                }
+
+        .dashboard .panel:hover nav button span {
+            display: block;
+        }
+
+        .dashboard .panel nav button span a {
+            color: rgba(255, 255, 255, 0.85);
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(13px, 1.2vw, 16px);
+            font-weight: 500;
+            letter-spacing: clamp(0px, 0.02vw, 0.2px);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+            .dashboard .panel nav button span a:hover {
+                color: #FFFFFF;
+            }
+
+.dashboard-content {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    padding: clamp(16px, 2vw, 32px);
+    box-sizing: border-box;
+    background: #F5F7FB;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
