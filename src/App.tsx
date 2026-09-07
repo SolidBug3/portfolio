@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Memodget from '../memodget/Memodget'
 import Portfolio from './Portfolio'
+import Privacy from '../memodget/privacy/privacy'
 
 function PortfolioPage() {
     const [cssLoaded, setCssLoaded] = useState(false)
@@ -33,6 +34,10 @@ function App() {
 
     if (path === '/memodget' || path === '/memodget/') {
         return <Memodget />
+    }
+
+    else if (path === '/privacy' || path === '/privacy/') {
+        return <Privacy />
     }
 
     return <PortfolioPage />

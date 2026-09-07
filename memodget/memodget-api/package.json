@@ -12,6 +12,7 @@
   "type": "commonjs",
   "dependencies": {
     "@libsql/client": "^0.18.0",
+    "jose": "^6.2.12",
     "wrangler": "^4.129.0"
   },
   "allowScripts": {

@@ -2,5 +2,8 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "memodget-api",
   "main": "src/index.ts",
-  "compatibility_date": "2026-09-07"
+  "compatibility_date": "2026-09-07",
+  "vars": {
+    "GOOGLE_CLIENT_ID": "567383042020-s771ujl5vr3i916av7vk197g9rk6llgm.apps.googleusercontent.com"
+  }
 }
