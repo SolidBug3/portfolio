@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { Client } from '@libsql/client'
 
-export async function getBudgetInfoQuery(db: Client, userId: number, budgetId: number) {
+export async function getBudgetInfoQuery(db, _userId, budgetId) {
     const result = await db.execute({
         sql: `
             SELECT year, month
