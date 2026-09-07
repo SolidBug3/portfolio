@@ -4,7 +4,7 @@
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
-    padding: 30px 20px;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,9 +14,8 @@
 .privacy-card {
     width: 100%;
     max-width: 850px;
-    max-height: calc(100vh - 60px);
     box-sizing: border-box;
-    padding: 35px 45px;
+    padding: 25px 35px;
     background: rgba(255, 255, 255, 0.14);
     border: 1px solid rgba(171, 210, 250, 0.8);
     border-radius: 28px;
@@ -27,14 +26,14 @@
 }
 
     .privacy-card h1 {
-        margin: 0 0 8px 0;
-        font-size: clamp(26px, 4vw, 42px);
-        line-height: 1.15;
+        margin: 0 0 5px 0;
+        font-size: clamp(24px, 3vw, 36px);
+        line-height: 1.1;
     }
 
 .privacy-date {
-    margin: 0 0 25px 0;
-    font-size: 13px;
+    margin: 0 0 18px 0;
+    font-size: 12px;
     opacity: 0.7;
 }
 
@@ -42,7 +41,7 @@
     min-height: 0;
     width: 100%;
     padding: 0;
-    margin: 0 0 20px 0;
+    margin: 0 0 13px 0;
     box-sizing: border-box;
 }
 
@@ -51,15 +50,15 @@
     }
 
 .privacy-card h2 {
-    margin: 0 0 6px 0;
-    font-size: 20px;
-    line-height: 1.2;
+    margin: 0 0 4px 0;
+    font-size: 17px;
+    line-height: 1.15;
 }
 
 .privacy-card p {
-    margin: 0 0 8px 0;
-    font-size: 15px;
-    line-height: 1.45;
+    margin: 0 0 5px 0;
+    font-size: 13px;
+    line-height: 1.35;
     opacity: 0.9;
 }
 
@@ -69,29 +68,32 @@
 
 @media (max-width: 600px) {
     .privacy-page {
-        padding: 15px;
+        padding: 12px;
     }
 
     .privacy-card {
-        max-height: calc(100vh - 30px);
-        padding: 25px 20px;
+        padding: 20px 18px;
         border-radius: 22px;
     }
 
         .privacy-card h1 {
-            font-size: 28px;
+            font-size: 25px;
         }
 
-        .privacy-card h2 {
-            font-size: 18px;
-        }
+    .privacy-date {
+        margin-bottom: 14px;
+    }
 
-        .privacy-card p {
-            font-size: 14px;
-            line-height: 1.4;
-        }
+    .privacy-card section {
+        margin-bottom: 10px;
+    }
 
-        .privacy-card section {
-            margin-bottom: 15px;
-        }
+    .privacy-card h2 {
+        font-size: 16px;
+    }
+
+    .privacy-card p {
+        font-size: 12px;
+        line-height: 1.3;
+    }
 }
