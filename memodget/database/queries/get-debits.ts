@@ -35,9 +35,17 @@ export function getDebits(userId: number, budgetId: number) {
     const [debits, setDebits] = useState(0)
 
     useEffect(() => {
-        getDebitsFromServer(userId, budgetId).then(result => {
-            setDebits(Number(result.total ?? 0))
-        })
+        const update = () => {
+            getDebitsFromServer(userId, budgetId).then(result => {
+                setDebits(Number(result.total ?? 0))
+            })
+        }
+
+        update()
+
+        const interval = setInterval(update, 5000)
+
+        return () => clearInterval(interval)
     }, [userId, budgetId])
 
     return debits

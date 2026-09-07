@@ -10,16 +10,17 @@
     flex: 1 1 0;
     width: 100%;
     max-width: 380px;
-    min-height: 380px;
-    padding: 45px 35px;
+    min-height: clamp(220px, 35vw, 380px);
+    padding: clamp(20px, 4vw, 45px) clamp(15px, 3vw, 35px);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     background: rgba(255, 255, 255, 0.14);
     border: 1px solid var(--card-border-color);
-    border-radius: 28px;
+    border-radius: clamp(18px, 3vw, 28px);
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -28,32 +29,32 @@
 }
 
 
-.custom-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 28px;
-    background: linear-gradient( 135deg, rgba(255, 255, 255, 0.22), transparent 35%, transparent 70%, rgba(255, 255, 255, 0.08) );
-    pointer-events: none;
-}
+    .custom-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: clamp(18px, 3vw, 28px);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent 35%, transparent 70%, rgba(255, 255, 255, 0.08));
+        pointer-events: none;
+    }
 
-.custom-card::before {
-    content: "";
-    position: absolute;
-    top: -100%;
-    left: -150%;
-    width: 70%;
-    height: 300%;
-    background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.22), transparent );
-    transform: rotate(20deg);
-    animation: glassReflection 7s ease-in-out infinite;
-}
+    .custom-card::before {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: -150%;
+        width: 70%;
+        height: 300%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+        transform: rotate(20deg);
+        animation: glassReflection 7s ease-in-out infinite;
+    }
 
 
-.custom-card:hover {
-    transform: translateY(-60px);
-    box-shadow: 0 30px 65px rgba(0, 0, 0, 0.25), 0 0 45px rgba(139, 227, 90, 0.18);
-}
+    .custom-card:hover {
+        transform: translateY(-60px);
+        box-shadow: 0 30px 65px rgba(0, 0, 0, 0.25), 0 0 45px rgba(139, 227, 90, 0.18);
+    }
 
 .custom-card-list {
     position: relative;
@@ -62,7 +63,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: clamp(4px, 0.7vw, 8px);
     margin-top: 5px;
     width: 100%;
     text-align: center;
@@ -72,23 +73,22 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 14px;
-        padding: 7px 12px;
+        gap: clamp(5px, 0.9vw, 10px);
+        padding: clamp(3px, 0.5vw, 6px) clamp(5px, 0.8vw, 10px);
         box-sizing: border-box;
         background: none;
         border-radius: 0;
-        color: #FFFFFF;
-        font-size: clamp(30px, 1.4vw, 40px);
+        color: #8F72FF;
+        font-size: clamp(16px, 1.5vw, 24px);
         font-weight: 700;
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-        color: #8F72FF;
     }
 
     .custom-card-list span {
         flex-shrink: 0;
         width: auto;
         text-align: center;
-        font-size: clamp(44px, 1.4vw, 56px);
+        font-size: clamp(24px, 2.2vw, 36px);
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     }
 
@@ -107,12 +107,19 @@
 .custom-card .title {
     position: relative;
     z-index: 1;
-    margin: 0 0 20px;
+    margin: 0 0 clamp(8px, 1.5vw, 16px);
     color: #FFFFFF;
-    font-size: clamp(20px, 2.2vw, 28px);
+    font-size: clamp(15px, 1.7vw, 22px);
     font-weight: 700;
 }
 
+div .card-low-content {
+    font-size: clamp(24px, 2vw, 10vw);
+}
+
+    div .card-low-content span {
+        font-size: 1.4em;
+    }
 
 @keyframes glassReflection {
     0% {

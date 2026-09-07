@@ -1,15 +1,7 @@
 import './CircleProgress.css'
 
-export default function CircleProgress({
-    total,
-    red
-}: {
-    total: number
-    red: number
-}) {
-    const percentage = total > 0
-        ? Math.min((Math.abs(red) / total) * 100, 100)
-        : 0
+export default function CircleProgress({ credits, debits }: { credits: number, debits: number }) {
+    const percentage = credits > 0 ? Math.min((Math.abs(debits) / credits) * 100, 100) : 0
 
     return (
         <div className="circle-progress">

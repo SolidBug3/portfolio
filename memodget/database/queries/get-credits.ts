@@ -35,9 +35,17 @@ export function getCredits(userId: number, budgetId: number) {
     const [credits, setCredits] = useState(0)
 
     useEffect(() => {
-        getCreditsFromServer(userId, budgetId).then(result => {
-            setCredits(Number(result.total ?? 0))
-        })
+        const update = () => {
+            getCreditsFromServer(userId, budgetId).then(result => {
+                setCredits(Number(result.total ?? 0))
+            })
+        }
+
+        update()
+
+        const interval = setInterval(update, 5000)
+
+        return () => clearInterval(interval)
     }, [userId, budgetId])
 
     return credits

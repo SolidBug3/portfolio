@@ -5,6 +5,7 @@ import '../css/dashboard/button.css'
 import '../css/dashboard/toolbar.css'
 
 import overview_icon from '../img/panel-icons/overview.png'
+import operations_icon from '../img/panel-icons/operations.png'
 
 import BodySelector from './BodySelector'
 import OverView from '../components/dashboard/overview'
@@ -13,20 +14,28 @@ export default function Dashboard({ user }: { user: { id: number, email: string,
     const [page, setPage] = useState(0)
 
     return (
-        <><BodySelector />
-        <div className="dashboard">
-            <aside className="panel">
-                <nav>
-                    <button onClick={() => setPage(0)}>
-                        <img src={overview_icon} />
-                        <span><a href="">home</a></span>
-                    </button>
-                </nav>
-            </aside>
+        <>
+            <BodySelector />
 
-            <main className="dashboard-content">
-                {page === 0 && <OverView user={user} />}
-            </main>
-        </div></>
+            <div className="dashboard">
+                <aside className="panel">
+                    <nav>
+                        <button onClick={() => setPage(0)}>
+                            <img src={overview_icon} />
+                            <span>home</span>
+                        </button>
+
+                        <button onClick={() => setPage(1)}>
+                            <img src={operations_icon} />
+                            <span>operations</span>
+                        </button>
+                    </nav>
+                </aside>
+
+                <main className="dashboard-content">
+                    {page === 0 && <OverView user={user} />}
+                </main>
+            </div>
+        </>
     )
 }
