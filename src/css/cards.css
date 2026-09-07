@@ -71,7 +71,7 @@
     font-size: clamp(50px, 6vw, 72px);
     line-height: 1;
     color: var(--card-icon-color);
-    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.15));
+    filter: drop-shadow( 0 8px 15px rgba(0, 0, 0, 0.15) );
 }
 
 .card h3 {

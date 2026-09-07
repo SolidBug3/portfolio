@@ -63,8 +63,6 @@ function ProjectCard
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <img src={icon} alt="" />
-                    <span>Voir sur le Play Store</span>
                 </a>
             </div>
 
