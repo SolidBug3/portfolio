@@ -1,7 +1,7 @@
 import '../css/GoogleButton.css'
 import GoogleImage from '../img/google.png'
 
-import HomeProps from '/Session'
+import type HomeProps from './Session'
 
 export default function GoogleButton({ user, handleGoogleLogin, handleLogout }: HomeProps) {
     return (
