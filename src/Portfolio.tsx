@@ -4,7 +4,6 @@ function ProjectCard
     ({
         name,
         description,
-        icon,
         link,
         images
     }: {
