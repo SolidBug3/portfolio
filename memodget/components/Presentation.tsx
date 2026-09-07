@@ -24,7 +24,7 @@ export default function Presentation() {
                 <div className="card-list">
                     <div><span>✦</span>Au mois et a l'année</div>
                     <div><span>💸</span>Des dépenses contrôlées</div>
-                    <div className="card-list-element-special"><span>🪙</span>12€ une fois = accès à vie.</div>
+                    <div className="card-list-element-special"><span>🪙</span>7€ une fois = accès à vie.</div>
                 </div>
             </div>
 
