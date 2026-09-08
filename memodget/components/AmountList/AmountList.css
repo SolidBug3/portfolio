@@ -110,8 +110,17 @@
         }
 
     .amount-flags {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
         width: max-content;
         max-width: none;
-        flex-wrap: nowrap;
+        white-space: normal;
+    }
+
+    .amount-flag {
+        flex-shrink: 0;
     }
 }
