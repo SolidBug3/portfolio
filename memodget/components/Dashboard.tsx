@@ -22,7 +22,7 @@ export default function Dashboard({ user }: { user: { id: number, email: string,
                     <nav>
                         <button onClick={() => setPage(0)}>
                             <img src={overview_icon} />
-                            <span>home</span>
+                            <span>stats</span>
                         </button>
 
                         <button onClick={() => setPage(1)}>
