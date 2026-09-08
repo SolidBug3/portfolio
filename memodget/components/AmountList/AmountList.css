@@ -50,11 +50,13 @@
 }
 
 .amount-flags {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: clamp(3px, 0.4vw, 6px);
+    gap: 4px;
+    width: fit-content;
+    max-width: 100%;
     overflow: visible !important;
 }
 
@@ -106,6 +108,7 @@
         }
 
     .amount-flags {
-        width: 100%;
+        width: fit-content;
+        gap: 4px;
     }
 }
