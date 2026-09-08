@@ -4,90 +4,91 @@ export default function Privacy() {
     return (
         <div className="privacy-page">
             <div className="privacy-card">
-                <h1>Memodget — Privacy Policy</h1>
+                <h1>Memodget — Politique de confidentialité</h1>
 
                 <p className="privacy-date">
-                    Last updated: September 7, 2026
+                    Dernière mise à jour : 7 septembre 2026
                 </p>
 
                 <section>
-                    <h2>Data collection</h2>
+                    <h2>Collecte des données</h2>
 
                     <p>
-                        Memodget requires an account to use its online features.
-                        When you create an account or sign in, Memodget may
-                        receive and store information such as your email address,
-                        name, and account identifier.
+                        Memodget nécessite un compte pour utiliser ses fonctionnalités
+                        en ligne. Lorsque vous créez un compte ou vous connectez,
+                        Memodget peut recevoir et stocker des informations telles que
+                        votre adresse e-mail, votre nom et votre identifiant de compte.
                     </p>
 
                     <p>
-                        Memodget does not connect to bank accounts, banking
-                        services, payment accounts, or financial institutions.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Budget and expense data</h2>
-
-                    <p>
-                        Information that you enter into Memodget, such as
-                        expenses, income, categories, and budget information,
-                        may be stored on our servers so that it can be accessed
-                        through your account.
-                    </p>
-
-                    <p>
-                        This information is used solely to provide the
-                        functionality of Memodget.
+                        Memodget ne se connecte pas aux comptes bancaires, aux services
+                        bancaires, aux comptes de paiement ou aux établissements
+                        financiers.
                     </p>
                 </section>
 
                 <section>
-                    <h2>Payments</h2>
+                    <h2>Données de budget et de dépenses</h2>
 
                     <p>
-                        Memodget may offer certain features or access through a
-                        one-time payment.
+                        Les informations que vous saisissez dans Memodget, telles que
+                        vos dépenses, revenus, catégories et informations budgétaires,
+                        peuvent être stockées sur nos serveurs afin d'être accessibles
+                        depuis votre compte.
                     </p>
 
                     <p>
-                        Payment information is handled by our payment provider.
-                        Memodget does not store your complete payment card
-                        information.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Data sharing</h2>
-
-                    <p>
-                        Memodget does not sell or rent your personal information.
-                    </p>
-
-                    <p>
-                        Your information may be shared with third-party service
-                        providers only when necessary to provide Memodget's
-                        services, such as authentication, data storage, or
-                        payment processing.
+                        Ces informations sont utilisées uniquement pour fournir les
+                        fonctionnalités de Memodget.
                     </p>
                 </section>
 
                 <section>
-                    <h2>Data security</h2>
+                    <h2>Paiements</h2>
 
                     <p>
-                        We take reasonable measures to protect your account and
-                        the information stored by Memodget against unauthorized
-                        access, alteration, or disclosure.
+                        Memodget peut proposer certaines fonctionnalités ou certains
+                        accès par le biais d'un paiement unique.
+                    </p>
+
+                    <p>
+                        Les informations de paiement sont traitées par notre prestataire
+                        de paiement. Memodget ne stocke pas l'intégralité des informations
+                        de votre carte bancaire.
                     </p>
                 </section>
 
                 <section>
-                    <h2>Data deletion</h2>
+                    <h2>Partage des données</h2>
 
                     <p>
-                        You may request the deletion of your Memodget account
-                        and associated data by contacting us.
+                        Memodget ne vend ni ne loue vos informations personnelles.
+                    </p>
+
+                    <p>
+                        Vos informations peuvent être partagées avec des prestataires
+                        tiers uniquement lorsque cela est nécessaire pour fournir les
+                        services de Memodget, notamment pour l'authentification, le
+                        stockage des données ou le traitement des paiements.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Sécurité des données</h2>
+
+                    <p>
+                        Nous prenons des mesures raisonnables pour protéger votre compte
+                        et les informations stockées par Memodget contre tout accès,
+                        toute modification ou toute divulgation non autorisée.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Suppression des données</h2>
+
+                    <p>
+                        Vous pouvez demander la suppression de votre compte Memodget
+                        et des données associées en nous contactant.
                     </p>
                 </section>
 
@@ -95,20 +96,28 @@ export default function Privacy() {
                     <h2>Contact</h2>
 
                     <p>
-                        If you have questions about this privacy policy or
-                        Memodget, you can contact SolidBug through the SolidBug
-                        website.
+                        Si vous avez des questions concernant cette politique de
+                        confidentialité ou Memodget, vous pouvez contacter SolidBug
+                        via le site internet de SolidBug.
                     </p>
                 </section>
 
                 <section>
-                    <h2>Changes to this policy</h2>
+                    <h2>Modifications de cette politique</h2>
 
                     <p>
-                        This privacy policy may be updated if the functionality
-                        or data handling of Memodget changes.
+                        Cette politique de confidentialité peut être mise à jour si
+                        les fonctionnalités ou le traitement des données de Memodget
+                        évoluent.
                     </p>
                 </section>
+
+                <a
+                    className="privacy-back-button"
+                    href="https://solidbug.fr/memodget"
+                >
+                    Retour à Memodget
+                </a>
             </div>
         </div>
     )

@@ -6,9 +6,12 @@ import '../css/dashboard/toolbar.css'
 
 import overview_icon from '../img/panel-icons/overview.png'
 import operations_icon from '../img/panel-icons/operations.png'
+import privacy_icon from '../img/panel-icons/privacy.png'
 
 import BodySelector from './BodySelector'
+
 import OverView from '../components/dashboard/overview'
+import Operations from '../components/dashboard/operations'
 
 export default function Dashboard({ user }: { user: { id: number, email: string, name: string | null } }) {
     const [page, setPage] = useState(0)
@@ -29,11 +32,17 @@ export default function Dashboard({ user }: { user: { id: number, email: string,
                             <img src={operations_icon} />
                             <span>operations</span>
                         </button>
+
+                        <button onClick={() => window.location.href = 'https://solidbug.fr/privacy'}>
+                            <img src={privacy_icon} />
+                            <span>privacy</span>
+                        </button>
                     </nav>
                 </aside>
 
                 <main className="dashboard-content">
                     {page === 0 && <OverView user={user} />}
+                    {page === 1 && <Operations user={user} />}
                 </main>
             </div>
         </>

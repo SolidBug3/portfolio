@@ -66,6 +66,32 @@
         margin-bottom: 0;
     }
 
+.privacy-back-button {
+    display: block;
+    width: fit-content;
+    margin: 18px auto 0 auto;
+    padding: 9px 18px;
+    box-sizing: border-box;
+    border: 1px solid #ABD2FA;
+    border-radius: 999px;
+    background: #8F72FF;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .privacy-back-button:hover {
+        background: #A58DFF;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 14px rgba(0, 0, 0, 0.18);
+    }
+
+    .privacy-back-button:active {
+        transform: translateY(0);
+    }
+
 @media (max-width: 600px) {
     .privacy-page {
         padding: 12px;

@@ -30,7 +30,7 @@ export async function getBudgetAmountsQuery(db: Client, params: Record<string, s
     }
 
     sql += `
-        ORDER BY id DESC
+        ORDER BY day DESC
     `
 
     const result = await db.execute({
