@@ -7,8 +7,8 @@ export { default as CardSpan } from './CardSpan'
 
 import type { ReactNode } from 'react'
 
-export default function Card({ children, container, CD = true, orientation = 'v', className }: { children: ReactNode, container?: string, CD?: boolean, orientation?: 'h' | 'v', className?: string }) {
-    const card = <div className={className ? `card ${className}-card` : 'card'}>{children}</div>
+export default function Card({ children, container, CD = true, orientation = 'v', className, is }: { children: ReactNode, container?: string, CD?: boolean, orientation?: 'h' | 'v', className?: string, is?: string }) {
+    const card = <div className={`card${className ? ` ${className}-card` : ''}${is ? ` ${is}-card` : ''}`}>{children}</div>
 
     if (CD) {
         return card

@@ -3,61 +3,14 @@ import { useEffect, useRef, useState } from "react"
 import CircleProgress from "../CircleProgress/CircleProgress"
 import SumUp from "../SumUp/SumUp"
 import BudgetSelector from "../BudgetSelector/BudgetSelector"
-
-import { getCredits } from "../../database/queries/get-credits"
-import { getDebits } from "../../database/queries/get-debits"
-import { getBudgetIdFromServer } from "../../database/queries/get-budget-id"
-import { getLastBudgetIdFromServer } from "../../database/queries/get-last-budget-id"
-
+import AmountList from "../AmountList/AmountList"
+import BudgetData from "../BudgetData"
 import Card, { Deck } from "../Card/Card"
 
 import "../../css/dashboard/balance-card.css"
 
 export default function OverView({ user }: { user: { id: number, email: string, name: string | null } }) {
-    const [selectedBudget, setSelectedBudget] = useState<number | null>(null)
-
-    const requestId = useRef(0)
-
-    const credits = getCredits(user.id, selectedBudget ?? 0)
-    const debits = getDebits(user.id, selectedBudget ?? 0)
-
-    const balance = new Intl.NumberFormat('fr-FR', {
-        style: 'currency',
-        currency: 'EUR'
-    }).format(credits - debits)
-
-    useEffect(() => {
-        const loadLastBudget = async () => {
-            try {
-                const result = await getLastBudgetIdFromServer(user.id)
-
-                if (result?.id) { setSelectedBudget(Number(result.id)) }
-            } catch (error) {
-                console.error('Failed to get last budget:', error)
-            }
-        }
-
-        loadLastBudget()
-    }, [user.id])
-
-    const handleBudgetChange = async (newYear: number, newMonth: number) => {
-        const currentRequest = ++requestId.current
-
-        setSelectedBudget(null)
-
-        try {
-            const result = await getBudgetIdFromServer(user.id, newYear, newMonth)
-            console.log('BUDGET LOOKUP:', user.id, newYear, newMonth, result)
-
-            if (currentRequest !== requestId.current) { return }
-
-            if (result?.id) { setSelectedBudget(Number(result.id)) }
-        } catch (error) {
-            if (currentRequest === requestId.current) {
-                console.error('Failed to get budget:', error)
-            }
-        }
-    }
+    const { selectedBudget, credits, debits, amounts, balance, handleBudgetChange } = BudgetData(user.id)
 
     return (
         <>
@@ -74,6 +27,9 @@ export default function OverView({ user }: { user: { id: number, email: string, 
                         </Card>
                     </>
                 )}
+            </Deck>
+            <Deck is="loose">
+                <Card is="loose"><AmountList data={amounts} /></Card>
             </Deck>
         </>
     )

@@ -1,5 +1,7 @@
 .card-container-h,
-.card-container-v {
+.card-container-v,
+.card-container-h-loose,
+.card-container-v-loose {
     text-align: center;
     font-size: clamp(0.9em, 1.2vw, 1.2em);
 
@@ -10,17 +12,26 @@
     justify-content: flex-start;
     align-items: center;
 
-    margin: 10px;
+    margin: 0 2%;
     vertical-align: top;
+    flex-shrink: 0;
 }
 
-.card-container-h {
+.card-container-h,
+.card-container-h-loose {
     flex-direction: row;
     width: fit-content;
 }
 
-.card-container-v {
+.card-container-v,
+.card-container-v-loose {
     flex-direction: column;
     width: fit-content;
     gap: 20px;
+}
+
+.card-container-h-loose,
+.card-container-v-loose {
+    width: max-content;
+    font-size: 1em;
 }
