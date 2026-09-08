@@ -8,7 +8,7 @@ import Card, { Deck } from "../Card/Card"
 import "../../css/dashboard/balance-card.css"
 
 export default function OverView({ user }: { user: { id: number, email: string, name: string | null } }) {
-    const { selectedBudget, credits, debits, amounts, balance, handleBudgetChange } = BudgetData(user.id)
+    const { selectedBudget, credits, debits, amounts, flags, balance, handleBudgetChange } = BudgetData(user.id)
 
     return (
         <>
@@ -27,7 +27,7 @@ export default function OverView({ user }: { user: { id: number, email: string, 
                 )}
             </Deck>
             <Deck is="loose">
-                <Card is="loose"><AmountList data={amounts} /></Card>
+                <Card is="loose"><AmountList data={amounts} flags={flags} /></Card>
             </Deck>
         </>
     )

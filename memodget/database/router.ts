@@ -4,6 +4,7 @@ import { getLastBudgetIdQuery } from './queries/get-last-budget-id'
 import { getBudgetAmountsQuery } from './queries/get-budget-amounts'
 import { getCreditsQuery } from './queries/get-credits'
 import { getDebitsQuery } from './queries/get-debits'
+import { getFlagsFromAmountQuery } from './queries/get-flags-from-amount'
 
 export const queries = {
     'get-budget-info': getBudgetInfoQuery,
@@ -11,5 +12,6 @@ export const queries = {
     'get-last-budget-id': getLastBudgetIdQuery,
     'get-budget-amounts': getBudgetAmountsQuery,
     'get-credits': getCreditsQuery,
-    'get-debits': getDebitsQuery
+    'get-debits': getDebitsQuery,
+    'get-flags-from-amount': getFlagsFromAmountQuery
 }
