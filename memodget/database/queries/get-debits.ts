@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
 import type { Client } from '@libsql/client'
 
-export async function getDebitsQuery(db: Client, userId: number, budgetId: number) {
+export async function getDebitsQuery(db: Client, params: Record<string, string>) {
+    const userId = Number(params.user_id)
+    const budgetId = Number(params.budget_id)
+
     const result = await db.execute({
         sql: `
             SELECT COALESCE(

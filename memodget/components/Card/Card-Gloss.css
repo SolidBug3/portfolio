@@ -1,0 +1,31 @@
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 50%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(20deg);
+    animation: gloss 3s ease-in-out infinite;
+}
+
+
+@keyframes gloss {
+    0% {
+        left: -100%;
+    }
+
+    40% {
+        left: 150%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}

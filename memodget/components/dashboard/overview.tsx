@@ -1,51 +1,86 @@
-import '../../css/cards/cards.css'
-import '../../css/cards/card-list.css'
-import '../../css/cards/card-icon.css'
-import '../../css/cards/card-title.css'
-import '../../css/dashboard/custom-cards.css'
+import { useEffect, useRef, useState } from "react"
 
 import CircleProgress from "../CircleProgress/CircleProgress"
 import SumUp from "../SumUp/SumUp"
+import BudgetSelector from "../BudgetSelector/BudgetSelector"
 
 import { getCredits } from "../../database/queries/get-credits"
 import { getDebits } from "../../database/queries/get-debits"
-import { getBudgetInfo } from "../../database/queries/get-budget-info"
+import { getBudgetIdFromServer } from "../../database/queries/get-budget-id"
+import { getLastBudgetIdFromServer } from "../../database/queries/get-last-budget-id"
+
+import Card, { Deck, CardSpan } from "../card/Card"
+
+import "../../css/dashboard/balance-card.css"
 
 export default function OverView({ user }: { user: { id: number, email: string, name: string | null } }) {
-    const selected_budget = 1
+    const [selectedBudget, setSelectedBudget] = useState<number | null>(null)
+    const [year, setYear] = useState(2026)
+    const [month, setMonth] = useState(9)
 
-    const credits = getCredits(user.id, selected_budget)
-    const debits = getDebits(user.id, selected_budget)
+    const requestId = useRef(0)
 
-    const balance = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(credits - debits)
+    const credits = getCredits(user.id, selectedBudget ?? 0)
+    const debits = getDebits(user.id, selectedBudget ?? 0)
 
-    const budgetInfo = getBudgetInfo(selected_budget)
+    const balance = new Intl.NumberFormat('fr-FR', {
+        style: 'currency',
+        currency: 'EUR'
+    }).format(credits - debits)
 
-    if (!budgetInfo) { return null }
+    useEffect(() => {
+        const loadLastBudget = async () => {
+            try {
+                const result = await getLastBudgetIdFromServer(user.id)
 
-    const year = budgetInfo.year
-    const month = budgetInfo.month
+                if (result?.id) {
+                    setSelectedBudget(Number(result.id))
+                }
+            } catch (error) {
+                console.error('Failed to get last budget:', error)
+            }
+        }
 
-    const date = `${year}/${String(month).padStart(2, '0')}`
+        loadLastBudget()
+    }, [user.id])
+
+    const handleBudgetChange = async (newYear: number, newMonth: number) => {
+        const currentRequest = ++requestId.current
+
+        setYear(newYear)
+        setMonth(newMonth)
+        setSelectedBudget(null)
+
+        try {
+            const result = await getBudgetIdFromServer(user.id, newYear, newMonth)
+            console.log('BUDGET LOOKUP:', user.id, newYear, newMonth, result)
+
+            if (currentRequest !== requestId.current) { return }
+
+            if (result?.id) { setSelectedBudget(Number(result.id)) }
+        } catch (error) {
+            if (currentRequest === requestId.current) {
+                console.error('Failed to get budget:', error)
+            }
+        }
+    }
 
     return (
-        <div className="card-container">
-            <div className="custom-card">
-                <div className="custom-card-list"><span>{date}</span></div>
-            </div>
+        <>
+            <Deck>
+                <Card><BudgetSelector onChange={handleBudgetChange} /></Card>
 
-            <div className="custom-card">
-                <div className="custom-card-list">
-                    <div className="card-low-content"><span>⚖️</span>{balance}</div>
-                </div>
-            </div>
+                {selectedBudget !== null && (
+                    <>
+                        <Card className="balance">⚖️{balance}</Card>
 
-            <div className="custom-card">
-                <div className="custom-card-list">
-                    <CircleProgress credits={credits} debits={debits} />
-                    <div><SumUp credits={credits} debits={debits} /></div>
-                </div>
-            </div>
-        </div>
+                        <Card>
+                            <CircleProgress credits={credits} debits={debits} />
+                            <SumUp credits={credits} debits={debits} />
+                        </Card>
+                    </>
+                )}
+            </Deck>
+        </>
     )
 }

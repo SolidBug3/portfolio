@@ -18,14 +18,9 @@ export async function handleDatabaseRequest(request: Request, db: any, headers: 
         )
     }
 
-    const userId = Number(url.searchParams.get('user_id'))
-    const budgetId = Number(url.searchParams.get('budget_id'))
+    const params = Object.fromEntries(url.searchParams.entries())
 
-    const result = await query(
-        db,
-        userId || 0,
-        budgetId || 0
-    )
+    const result = await query(db, params)
 
     return new Response(
         JSON.stringify(result),

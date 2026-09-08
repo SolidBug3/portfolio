@@ -1,0 +1,12 @@
+.BudgetSelector select {
+    color: #7692FF;
+    text-align: center;
+    font-size: clamp(0.8em, 1.2vw, 1em);
+
+    border: none;
+    background: none;
+    outline: none;
+
+    padding-right: 10px;
+    margin-right: 10px;
+}

@@ -12,4 +12,7 @@
   <ItemGroup>
     <None Include=".github\workflows\deploy.yml" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="memodget\components\BudgetSelector\" />
+  </ItemGroup>
 </Project>

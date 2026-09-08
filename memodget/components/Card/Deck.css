@@ -1,0 +1,26 @@
+.card-container-h,
+.card-container-v {
+    text-align: center;
+    font-size: clamp(0.9em, 1.2vw, 1.2em);
+
+    padding: clamp(8px, 1%, 12px);
+    box-sizing: border-box;
+
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin: 10px;
+    vertical-align: top;
+}
+
+.card-container-h {
+    flex-direction: row;
+    width: fit-content;
+}
+
+.card-container-v {
+    flex-direction: column;
+    width: fit-content;
+    gap: 20px;
+}

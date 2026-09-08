@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react'
 import type { Client } from '@libsql/client'
 
-export async function getBudgetInfoQuery(db: Client, userId: number, budgetId: number) {
+export async function getBudgetInfoQuery(db: Client, params: Record<string, string>) {
+    const budgetId = Number(params.budget_id)
+
     const result = await db.execute({
         sql: `
             SELECT year, month
             FROM budgets
             WHERE id = ?
-            AND ? = ?
         `,
-        args: [budgetId, userId, userId]
+        args: [budgetId]
     })
 
     return result.rows[0]

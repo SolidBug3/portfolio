@@ -1,0 +1,20 @@
+.card {
+    color: #7692FF;
+    text-align: center;
+    font-size: clamp(0.9em, 1.2vw, 1.2em);
+
+    border: 1px solid #ABD2FA;
+    border-radius: clamp(14px, 2vw, 20px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+    padding: clamp(8px, 1%, 12px);
+    width: clamp(160px, 18vw, 300px);
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 1%;
+    flex-shrink: 0;
+}
