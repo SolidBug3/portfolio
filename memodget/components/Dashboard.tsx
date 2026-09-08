@@ -42,7 +42,7 @@ export default function Dashboard({ user }: { user: { id: number, email: string,
 
                 <main className="dashboard-content">
                     {page === 0 && <OverView user={user} />}
-                    {page === 1 && <Operations user={user} />}
+                    {page === 1 && <Operations />}
                 </main>
             </div>
         </>
