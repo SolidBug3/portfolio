@@ -9,7 +9,7 @@ import { getDebits } from "../../database/queries/get-debits"
 import { getBudgetIdFromServer } from "../../database/queries/get-budget-id"
 import { getLastBudgetIdFromServer } from "../../database/queries/get-last-budget-id"
 
-import Card, { Deck } from "../card/Card"
+import Card, { Deck } from "../Card/Card"
 
 import "../../css/dashboard/balance-card.css"
 
