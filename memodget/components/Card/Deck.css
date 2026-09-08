@@ -29,16 +29,18 @@
 
 .card-container-h-loose,
 .card-container-v-loose {
-    width: min(96%, max-content);
-    max-width: 96%;
+    width: calc(100% - 4%);
     font-size: 1em;
+    justify-content: center;
+    flex-shrink: 1;
 }
 
 @media (max-width: 600px) {
-    .card-container-v-loose,
-    .card-container-h-loose {
-        width: 96%;
-        max-width: 96%;
+    .card-container-h-loose,
+    .card-container-v-loose {
+        width: 100%;
+        margin: 0;
+        padding: 8px 2%;
         box-sizing: border-box;
     }
 }

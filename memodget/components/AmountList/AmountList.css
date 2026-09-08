@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    width: clamp(300px, 50vw, 900px);
+    width: min(50vw, 900px);
     max-width: 100%;
+    min-width: 0;
     box-sizing: border-box;
 }
 
@@ -12,33 +13,39 @@
     grid-template-columns: 10% 25% 15% 15% 1fr;
     align-items: center;
     gap: clamp(4px, 0.8vw, 10px);
+
     width: 100%;
     box-sizing: border-box;
+
     padding: 10px 14px;
+
     border: 1px solid #ABD2FA;
     border-radius: 10px;
+
     background: #FFFFFF;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
     color: #7692FF;
     font-size: clamp(0.7em, 1vw, 0.95em);
     text-align: center;
+
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-    .amount-list-element > span {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+.amount-list-element > span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-        .amount-list-element > span:nth-child(2) {
-            width: 8vw;
-            min-width: 0;
-            overflow: visible;
-            white-space: nowrap;
-            font-weight: 600;
-            font-size: 1.05em;
-        }
+.amount-list-element > span:nth-child(2) {
+    width: 8vw;
+    min-width: 0;
+    overflow: visible;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 1.05em;
+}
 
 .amount-positive {
     color: lightseagreen;
@@ -59,17 +66,23 @@
 
 .amount-flag {
     display: inline-block;
+
     padding: 3px 8px;
+
     border: 1px solid #ABD2FA;
     border-radius: 999px;
+
     background: #F8FAFF;
+
     color: #6379C8;
     font-size: clamp(0.65em, 0.8vw, 0.8em);
     font-weight: 500;
     line-height: 1.2;
+
     white-space: nowrap;
     overflow: visible !important;
     text-overflow: clip;
+
     box-sizing: border-box;
 }
 
@@ -82,17 +95,4 @@
 
 .card:has(.AmountList) {
     border: none;
-}
-
-@media (max-width: 600px) {
-    .AmountList {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .amount-list-element {
-        grid-template-columns: 10% 30% 25% 1fr;
-        gap: 4px;
-        padding: 10px 8px;
-    }
 }
