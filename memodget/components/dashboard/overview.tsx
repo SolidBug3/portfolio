@@ -14,7 +14,9 @@ export default function OverView({ user }: { user: { id: number, email: string, 
     const [searchFlags, setSearchFlags] = useState<string[]>([])
     const { selectedBudget, credits, amounts, flags, balance, handleBudgetChange } = BudgetData(user.id, searchFlags)
 
-    const debit = amounts.reduce((total, amount) => { return amount.credit ? total : total + Number(amount.value) }, 0)
+    const debit = amounts.reduce((total, amount) => {
+        return total + (amount.credit ? Number(amount.value) : -Number(amount.value))
+    }, 0)
 
     return (
         <>
