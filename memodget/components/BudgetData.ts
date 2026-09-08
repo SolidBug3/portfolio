@@ -8,7 +8,7 @@ import { getFlagsFromAmountFromServer } from "../database/queries/get-flags-from
 
 let sessionBudgetId: number | null = null
 
-export default function BudgetData(userId: number) {
+export default function BudgetData(userId: number, searchFlags: string[] = []) {
     const [selectedBudget, setSelectedBudget] = useState<number>(() => {
         if (sessionBudgetId === null) {
             sessionBudgetId = 1
@@ -21,9 +21,9 @@ export default function BudgetData(userId: number) {
 
     const requestId = useRef(0)
 
+    const amounts = getBudgetAmounts(userId, selectedBudget, searchFlags)
     const credits = getCredits(userId, selectedBudget)
     const debits = getDebits(userId, selectedBudget)
-    const amounts = getBudgetAmounts(userId, selectedBudget)
 
     const balance = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(credits - debits)
 
