@@ -32,6 +32,7 @@
 
 .card-container-h-loose,
 .card-container-v-loose {
-    width: max-content;
+    width: min(96%, max-content);
+    max-width: 96%;
     font-size: 1em;
 }
