@@ -11,7 +11,7 @@ export async function getBudgetAmountsQuery(db: Client, params: Record<string, s
             FROM amounts
             WHERE user_id = ?
             AND budget_id = ?
-            ORDER BY id ASC
+            ORDER BY id DESC
         `,
         args: [userId, budgetId]
     })
