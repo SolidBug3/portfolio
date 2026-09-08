@@ -10,7 +10,7 @@
 
 .amount-list-element {
     display: grid;
-    grid-template-columns: 10% 25% 15% 15% 1fr;
+    grid-template-columns: 10% 25% 15% 1fr;
     align-items: center;
     gap: clamp(4px, 0.8vw, 10px);
     width: 100%;
@@ -51,7 +51,7 @@
 
 .amount-flags {
     display: inline-flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
     gap: 4px;
