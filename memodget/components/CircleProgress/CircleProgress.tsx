@@ -13,17 +13,19 @@ export default function CircleProgress({ credits, debits }: { credits: number, d
                     r="40"
                 />
 
-                <circle
-                    className="circle-red"
-                    cx="50"
-                    cy="50"
-                    r="40"
-                    pathLength="100"
-                    strokeDasharray={`${percentage} ${100 - percentage}`}
-                />
+                {debits < 0 && (
+                    <circle
+                        className="circle-red"
+                        cx="50"
+                        cy="50"
+                        r="40"
+                        pathLength="100"
+                        strokeDasharray={`${percentage} ${100 - percentage}`}
+                    />
+                )}
             </svg>
 
-            <span>{percentage.toFixed(0)}%</span>
+            <span>{Math.round(percentage)}%</span>
         </div>
     )
 }

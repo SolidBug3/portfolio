@@ -12,11 +12,14 @@ import "../../css/dashboard/balance-card.css"
 
 export default function OverView({ user }: { user: { id: number, email: string, name: string | null } }) {
     const [searchFlags, setSearchFlags] = useState<string[]>([])
-    const { selectedBudget, credits, amounts, flags, balance, handleBudgetChange } = BudgetData(user.id, searchFlags)
 
-    const debit = amounts.reduce((total, amount) => {
+    const { selectedBudget, credits, debits, amounts, flags, balance, handleBudgetChange } = BudgetData(user.id, searchFlags)
+
+    const searchTotal = amounts.reduce((total, amount) => {
         return total + (amount.credit ? Number(amount.value) : -Number(amount.value))
     }, 0)
+
+    const wheelDebits = searchFlags.length === 0 ? -debits : searchTotal
 
     return (
         <>
@@ -28,8 +31,8 @@ export default function OverView({ user }: { user: { id: number, email: string, 
                         <Card className="balance">⚖️{balance}</Card>
 
                         <Card>
-                            <CircleProgress credits={credits} debits={debit} />
-                            <SumUp credits={credits} debits={debit} />
+                            <CircleProgress credits={credits} debits={wheelDebits} />
+                            <SumUp credits={credits} debits={wheelDebits} />
                         </Card>
 
                         <Card><SearchBar onSearch={setSearchFlags} /></Card>
