@@ -41,4 +41,10 @@
         box-sizing: border-box;
         flex-shrink: 1;
     }
+
+        .card-container-v-loose .loose-card {
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
 }
