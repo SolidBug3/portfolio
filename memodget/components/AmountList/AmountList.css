@@ -92,7 +92,7 @@
     }
 
     .amount-list-element {
-        grid-template-columns: 15% 35% 1fr;
+        grid-template-columns: 15% minmax(0, 1fr) minmax(0, 1fr);
         gap: 4px;
         padding: 10px 8px;
     }
@@ -100,4 +100,12 @@
         .amount-list-element > span:nth-child(3) {
             display: none;
         }
+
+        .amount-list-element > span:nth-child(2) {
+            width: auto;
+        }
+
+    .amount-flags {
+        width: 100%;
+    }
 }
