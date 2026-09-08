@@ -4,6 +4,10 @@ body {
     animation: gradientMove 8s ease infinite;
 }
 
+.dashboard-content {
+    text-align: center;
+}
+
 @keyframes gradientMove {
     0% {
         background-position: 0% 50%;
