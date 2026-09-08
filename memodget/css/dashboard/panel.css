@@ -111,6 +111,13 @@ body.dashboard-page {
     background: #F5F7FB;
 }
 
+@media (max-width: 600px) {
+    .dashboard-content {
+        padding: clamp(8px, 1vw, 16px);
+        padding-left: calc(55px + clamp(8px, 1vw, 16px));
+    }
+}
+
 @keyframes gradientMove {
     0% {
         background-position: 0% 50%;
