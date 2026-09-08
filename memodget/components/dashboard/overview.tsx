@@ -9,14 +9,12 @@ import { getDebits } from "../../database/queries/get-debits"
 import { getBudgetIdFromServer } from "../../database/queries/get-budget-id"
 import { getLastBudgetIdFromServer } from "../../database/queries/get-last-budget-id"
 
-import Card, { Deck, CardSpan } from "../card/Card"
+import Card, { Deck } from "../card/Card"
 
 import "../../css/dashboard/balance-card.css"
 
 export default function OverView({ user }: { user: { id: number, email: string, name: string | null } }) {
     const [selectedBudget, setSelectedBudget] = useState<number | null>(null)
-    const [year, setYear] = useState(2026)
-    const [month, setMonth] = useState(9)
 
     const requestId = useRef(0)
 
@@ -33,9 +31,7 @@ export default function OverView({ user }: { user: { id: number, email: string, 
             try {
                 const result = await getLastBudgetIdFromServer(user.id)
 
-                if (result?.id) {
-                    setSelectedBudget(Number(result.id))
-                }
+                if (result?.id) { setSelectedBudget(Number(result.id)) }
             } catch (error) {
                 console.error('Failed to get last budget:', error)
             }
@@ -47,8 +43,6 @@ export default function OverView({ user }: { user: { id: number, email: string, 
     const handleBudgetChange = async (newYear: number, newMonth: number) => {
         const currentRequest = ++requestId.current
 
-        setYear(newYear)
-        setMonth(newMonth)
         setSelectedBudget(null)
 
         try {
