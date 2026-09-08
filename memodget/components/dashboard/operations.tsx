@@ -1,6 +1,6 @@
 import Card, { Deck } from "../Card/Card"
 
-export default function Operations({ user }: { user: { id: number, email: string, name: string | null } }) {
+export default function Operations() {
     return (
         <>
             <Deck>
