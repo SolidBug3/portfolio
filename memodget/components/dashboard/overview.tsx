@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from "react"
-
 import CircleProgress from "../CircleProgress/CircleProgress"
 import SumUp from "../SumUp/SumUp"
 import BudgetSelector from "../BudgetSelector/BudgetSelector"
